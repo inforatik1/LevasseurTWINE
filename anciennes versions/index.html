@@ -208,6 +208,7 @@ window.changeMusic = function(track) {
     if (window.bgMusic.src.includes(track)) {
         return;
     }
+
     window.bgMusic.src = track;
 
     window.bgMusic.play().catch(() => {
@@ -341,7 +342,7 @@ Vous comprenez que le lieu lui-même peut être une protection.
 La Plage des Forbans porte bien son nom.
 Sable large, accès discret, parfaite pour débarquer sans être vu.
 Votre équipage s’installe. Le trésor est là, sous bâche, trop massif pour être manipulé en une fois.
-Les hommes s’impatientent, certains veulent partir immédiatement.
+Les hommes s’impatientent. Certains veulent partir immédiatement.
 Vous savez que rester trop longtemps ici est dangereux.
 [[fuir]] 
 [[île aux pigeons]]</tw-passagedata><tw-passagedata pid="15" name="disuter avec le pêcheur" tags="port" position="100,500" size="100,100">Vous discutez avec un vieux pêcheur, ses filets sont aussi remplis de poissons que votre vie ne l&#39;est d&#39;aventure... Vous décidez de continuer en direction du port commercial.
@@ -388,7 +389,7 @@ changeMusic(&quot;calais.mp3&quot;);
 Vous vou couchez tard, enivré sans même vous souvenir d&#39;un seul nom de capitaine. 
 
 le lendemain, on toc à votre porte...
-[[ouvrir-&gt;départ pour les caraïbes]] 
+[[départ pour les caraïbes]] 
 
 </tw-passagedata><tw-passagedata pid="25" name="rejoindre un équipage" tags="taverne" position="1900,1200" size="100,100">La taverne bruisse de récits de mer et de fortunes rapides. Depuis la fin de la Paix d&#39;Utrecht, les corsaires sans lettres de marque errent comme des loups sans meute.
 Un homme vous observe. Il se présente comme timonier sur un brigantin sans pavillon. « Les guerres des rois sont finies… mais la mer, elle, paie toujours. »
@@ -473,13 +474,13 @@ Les convois sont mieux protégés. Les ports surveillés. Les opportunités se r
 Vous participez à quelques prises mineures : sucre, tabac, textiles. Rien qui marque une vie.
 Autour de vous, les meilleurs capitaines disparaissent… vers l’Afrique, dit-on.
 Vous restez. Vous survivez.
-Mais vous ne devenez jamais une légende.
+Mais vous ne devenez jamais un nom.
 
 [[refuser]]
 [[continuer dans les caraïbes]]
 &lt;script&gt;
 changeMusic(&quot;caraibe.mp3&quot;);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="35" name="route vers l&#39;océan indien" tags="mer" position="1900,1800" size="100,100">Vous embarquez dans un navire volé à la compagnie dess indes orientales, le voyage est long, dangereux. Vous contournez le cap de Bonne-Espérance.
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="35" name="route vers l&#39;océan indien" tags="mer" position="1900,1800" size="100,100">Vous embarquez dans un navire volé a1 la compagnie dess indes orientales, le voyage est long, dangereux. Vous contournez le cap de Bonne-Espérance.
 À mesure que vous approchez, les récits changent : ici, les prises ne sont pas des cargaisons… mais des trésors entiers.
 Des navires portugais, arabes, indiens… chargés pour des années.
 Un nom vous revient clairement désormais : Le capitaine Taylor.
@@ -516,10 +517,10 @@ changeMusic(&quot;défaite.mp3&quot;);
 Vous recrutez. Anciens marins, déserteurs, locaux.
 Mais sans réseau, sans routes maîtrisées, vos premières expéditions échouent.
 L’océan Indien ne pardonne pas l’improvisation.
-Vous comprenez trop tard : ici, seuls les hommes déjà intégrés aux grandes routes survivent. Vous remettez en question votre carrière...
+Vous comprenez trop tard : ici, seuls les hommes déjà intégrés aux grandes routes survivent.
 
 [[rejoindre Madagascar]] 
-[[chercher à rejoindre la marine marchande-&gt;fin prématurée]]
+[[fin prématurée]]
 </tw-passagedata><tw-passagedata pid="40" name="s&#39;établir à Madagascar" tags="madag" position="3500,600" size="100,100">(set: $popularite to $popularite - 10)
 (display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
@@ -534,7 +535,8 @@ Mais pas celle qui entre dans la légende.
 Vous choisissez la prudence. 
 Vous trouvez refuge dans les hauteurs, loin des regards.
 Les semaines deviennent des mois. La mer s’éloigne, et avec elle, les opportunités.
-Vous survivez, mais vous n’avancez plus, pendant ce temps, d’autres fortunes se bâtissent et d’autres noms émergent.
+Vous survivez, mais vous n’avancez plus.
+Pendant ce temps, d’autres fortunes se bâtissent et d’autres noms émergent.
 Le vôtre reste dans l’ombre.
 
 [[fin oubliée]]</tw-passagedata><tw-passagedata pid="42" name="rejoindre Madagascar" tags="madag" position="2900,600" size="100,100">(display:&quot;Styles&quot;)
@@ -560,10 +562,12 @@ Le lendemain, il vous convoque pour signer un contrat, vous êtes désormais acc
 (display: &quot;BarrePopularite&quot;)
 Vous creusez profondément.
 Chaque repère est pensé : orientation, roche, végétation.
-Mais surtout, vous notez ces informations.
-Pas sur une carte classique, ce serait trop risqué, encoder le chemin serait la solution ? 
+Rien n’est laissé au hasard.
+Mais surtout, vous notez.
+Pas sur une carte classique, ce serait trop risqué.
+Encoder le chemin serait la solution ? 
 [[codifier le chemin]]
-[[trouver un autre endroit-&gt;Rocher Chien]]</tw-passagedata><tw-passagedata pid="45" name="revenir à Mahé" tags="mahé" position="2125,2900" size="100,100">(set: $popularite to $popularite - 10)
+[[Rocher Chien]]</tw-passagedata><tw-passagedata pid="45" name="revenir à Mahé" tags="mahé" position="2125,2900" size="100,100">(set: $popularite to $popularite - 10)
 (display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
 Vous pensez pouvoir revenir discrètement à Mahé.
@@ -576,7 +580,8 @@ Vous cédez à la pression.
 Une partie du trésor est embarquée à la hâte tandis que l’autre reste.
 La manœuvre est désordonnée, quelques jours plus tard, vous réalisez :
 vous avez perdu le contrôle de votre propre fortune.
-Ce trésor devait bien disparaître un jour ou l&#39;autre, il s’est dispersé.
+Ce trésor devait bien disparaître un jour ou l&#39;autre.
+Il s’est dispersé.
 [[fin dispersée]]</tw-passagedata><tw-passagedata pid="47" name="matelot" tags="cors" position="400,900" size="100,100">Votre méthodologie et votre capacité à anticiper vous fait monter les échellons. En tant qu&#39;officier de la marine française, vous n&#39;avez pas besoin de vous battre pour l&#39;honneur. C&#39;est l&#39;or qui attire votre attention de manière croissante. de Surcouf, vous profitez de la guerre d&#39;Espagne pour devenir corsaire et au service d&#39;une lettre de marc et non plus de votre uniforme, vous dirigez des opérations bien plus palpitantes. 
 
 [[Corsaire ]] 
@@ -589,7 +594,7 @@ Un navire immense, vulnérable. Ses canons ont étés démontés pendant la temp
 L’attaque est fulugurante, chaotique, vous n&#39;aviez pas idée du butin.
 Lorsque vous montez à bord, vous comprenez immédiatement :
 de l&#39;or, des diamants et trésors sacrés… une richesse impossible à compter, plus que n&#39;importe quel trésor.
-C’est plus qu’une prise, c’est un basculement dans l&#39;Histoire de la piraterie.
+C’est plus qu’une prise, c’est un basculement.
 c&#39;est là qu&#39;Olivier Levasseur dit La Buse, entre dans l’histoire.
 [[partage du butin]] votre équipage est tout aussi méritant. le code de la piraterie est strict : le capitaine n&#39;est pas un tyran.
 [[cacher le trésor]] il est trop gros pour être dépensé en une vie, le cacher serait sage
@@ -603,11 +608,14 @@ changeMusic(&quot;défaite.mp3&quot;);
 (display: &quot;BarrePopularite&quot;)
 Vous partez en mer avec Taylor.
 Contrairement aux Caraïbes, ici tout est calculé : routes commerciales, vents, saisons.
+Vous apprenez vite. Trop vite.
 Lors d’un abordage, vous prenez la tête d’un groupe sans attendre.
-Vous frappez, vous désorganisez, vous écrasez les adversaires.
+Vous frappez, vous désorganisez, vous écrasez.
 Après la bataille, un homme lâche en riant :
 « Il fond sur les navires comme une buse. »
-Le surnom reste. Vous n’êtes plus un marin, vous devenez un capitaine.
+Le surnom reste.
+Vous n’êtes plus un marin.
+Vous devenez un capitaine.
 [[traque des navires portugais]]</tw-passagedata><tw-passagedata pid="51" name="fin prématurée" tags="fin" position="3325,575" size="100,100">Une fin épanouie mais dans l&#39;oublie... Qu&#39;est-il arrivé au marin ambitieux ? 
 [[Océan Indien]] 
 &lt;script&gt;
@@ -633,16 +641,17 @@ L’or ne fait pas seulement rêver… il divise.
 John Taylor impose une répartition stricte, chaque homme reçoit une part colossale.
 Mais très vite, des tensions apparaissent, certains veulent rentrer en Europe. D’autres disparaître, d’autres encore… continuer.
 Vous observez.
-Ce trésor est trop grand pour être simplement dépensé en rhum, en femmes... et en bière nom de Dieu.
+Ce trésor est trop grand pour être simplement dépensé en rhum et en femmes...
 [[suivre Taylor]] 
 [[garder une part secrète]] pour votre retraite et celle de vos enfants, ils ne connaitront pas la misère.
 [[imposer votre autorité]] vous êtes le capitaine, la part du lion vous revient</tw-passagedata><tw-passagedata pid="54" name="cacher le trésor" tags="tempete" position="2900,1300" size="100,100">(set: $popularite to $popularite - 10)
 (display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
 Vous prenez une décision froide.
-L’or ne doit pas être utilisé mais protégé des autres pirates comme des empires.
+L’or ne doit pas être utilisé.
+Il doit être protégé.
 Vous cherchez un lieu isolé, discret, difficile d’accès… mais connu de vous seul.
-Une île s’impose : Île Maurice.
+Un nom s’impose : Île Maurice.
 [[partir vers Maurice]]</tw-passagedata><tw-passagedata pid="55" name="suivre Taylor" tags="taylor" position="2300,1500" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
 Taylor choisit la prudence, il veut quitter l’océan Indien avec sa part.
@@ -655,9 +664,10 @@ Deux visions, deux destins.
 (display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
 Dans la confusion du partage, vous détournez une partie du butin.
-Discrètement et méthodiquement, la filouterie et la discression sont vos atouts.
+Discrètement. Méthodiquement.
 Quelques hommes fidèles vous suivent.
-Vous comprenez une chose essentielle : ce trésor ne doit pas circuler, il doit disparaître mais où ?
+Vous comprenez une chose essentielle : ce trésor ne doit pas circuler. Il doit disparaître.
+Mais où ?
 [[partir vers Maurice]]
 [[rester à Madagascar]]
 </tw-passagedata><tw-passagedata pid="57" name="imposer votre autorité" tags="equip" position="2800,1500" size="100,100">(set: $popularite to $popularite + 10)
@@ -667,21 +677,23 @@ Vous prenez le contrôle. Sans violence inutile, mais sans hésitation car votre
 Certains contestent... et disparaissent rapidement.
 Vous n’êtes plus un second ni un capitaine mais LE capitaine.
 vous avez néanmoins un fardeau :
-un trésor trop vaste pour être utilisé d&#39;une vie, même 15 ne suffiraient pas.
+un trésor trop vaste pour être utilisé.
 [[organiser la flotte]] Se reposer sur ses loriers ? très peu pour vous 
 [[cacher le trésor]] </tw-passagedata><tw-passagedata pid="58" name="retour à Madagascar" tags="madag" position="2400,1700" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
 À Sainte-Marie, les camps débordent d’hommes riches et méfiants.
 L’or qui circule, attire les marchands… et les espions.
 Vous voyez déjà les conséquences vous tomber dessus : trahisons, dénonciations, captures.
-Un tel trésor ne peut pas rester ici, du moins entre vos mains.
+Un tel trésor ne peut pas rester ici.
 [[partir vers Maurice]]
 [[s&#39;établir et prendre le risque]]</tw-passagedata><tw-passagedata pid="59" name="partir vers Maurice" tags="mer" position="2900,1800" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
-La traversée est tendue, vos hommes savent que ce butin est aussi leur fardeau.
-Certains murmurent, d’autres complotent.
-Vous maintenez le cap malgré les vents de couloir...
-À l’approche de Île Maurice, vous comprenez que tout va se jouer ici, il va s&#39;agir de disparaitre avec son or sans laisser de trace.
+La traversée est tendue. Vos hommes savent.
+Certains murmurent. D’autres complotent.
+Vous maintenez le cap.
+À l’approche de Île Maurice, vous comprenez que tout va se jouer ici.
+Pas une bataille.
+Une disparition.
 [[Maurice]]</tw-passagedata><tw-passagedata pid="60" name="rester à Madagascar" tags="madag" position="2500,2000" size="100,100">(set: $popularite to $popularite - 10)
 (display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
@@ -694,11 +706,12 @@ Vous comprenez trop tard : vous avez été repéré.
 [[capture]]
 [[fuite précipitée]]</tw-passagedata><tw-passagedata pid="61" name="organiser la flotte" tags="flotte" position="3125,1575" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
-Vous tentez de structurer votre puissance. Plusieurs navires, plusieurs capitaines sous vos ordres, Barberousse reste votre modèle, mais l’or corrompt tout.
-Les alliances sont fragiles, les fidélités achetées.
+Vous tentez de structurer votre puissance. Plusieurs navires, plusieurs capitaines sous vos ordres.
+Mais l’or corrompt tout.
+Les alliances sont fragiles. Les fidélités achetées.
 Un capitaine disparaît avec une part du trésor.
 Un autre négocie avec les autorités.
-Vous perdez le contrôle, le doute est un luce que même le capitaine le plus riche ne peut se permettre, vous devez agir.
+Vous perdez le contrôle.
 (if: $popularite &gt;= 60)[
 * [[cacher le trésor]]]
 [[effondrement de l&#39;équipage]]</tw-passagedata><tw-passagedata pid="62" name="s&#39;établir et prendre le risque" tags="madag" position="2700,1800" size="100,100">(set: $popularite to $popularite + 10)
@@ -706,7 +719,8 @@ Vous perdez le contrôle, le doute est un luce que même le capitaine le plus ri
 (display: &quot;BarrePopularite&quot;)
 Vous décidez de rester à Sainte-Marie.
 Vous tentez d’acheter la paix : alliances locales, échanges, protection.
-Pendant un temps, cela fonctionne mais vous devenez un homme influent, respecté et craint, mais le trésor vous dépasse.
+Pendant un temps, cela fonctionne mais vous devenez un homme influent, respecté et craint.
+Mais le trésor vous dépasse.
 Un soir, un de vos hommes disparaît.. le lendemain, un navire inconnu mouille au large, psychose ou trahison ?
 Vous comprenez que vous n’êtes plus invisible.
 (if: $popularite &gt;= 60)[
@@ -716,13 +730,16 @@ Vous comprenez que vous n’êtes plus invisible.
 </tw-passagedata><tw-passagedata pid="63" name="capture" tags="capt" position="3025,2200" size="100,100">(set: $popularite to $popularite - 10)
 (display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
-Votre fortune n&#39;avait de plus étendue que votre réputation, à l’aube,
-un navire armé, pavillon officiel, tout ça est trop organisé pour être une simple coïncidence.
-Quelqu’un vous a balancé, un Juda.
+Ils arrivent à l’aube.
+Un navire armé, pavillon officiel. Trop organisé pour être une coïncidence.
+Quelqu’un a parlé.
 Vous tentez de résister, mais vos hommes ne sont plus les mêmes.
-Certains fuient, d’autres se rendent.
+Certains fuient. D’autres se rendent.
+Vous êtes enchaîné.
 Sur le pont, un officier vous observe longuement.
-Il ne voit pas un homme… mais un symbole, celui de la piraterie.
+Il ne voit pas un homme… mais un symbole.
+Votre histoire ne s’arrête pas ici.
+Elle change de forme.
 [[héritage-légende]]</tw-passagedata><tw-passagedata pid="64" name="fuite précipitée" tags="tempete" position="3025,2000" size="100,100">(set: $popularite to $popularite - 10)
 (display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
@@ -741,18 +758,23 @@ Vous êtes en train de réagir.
 [[effondrement de l&#39;équipage]]</tw-passagedata><tw-passagedata pid="65" name="effondrement de l&#39;équipage" tags="mutin" position="3200,1775" size="100,100">(set: $popularite to $popularite - 20)
 (display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
-Tout se délite, l’or, qui faisait votre force, devient votre faiblesse.
-Les hommes ne suivent plus, ils calculent déjà leur part.
-Un groupe quitte le navire de nuit, un autre tente de s’approprier ce qui reste.
-Les ordres ne suffisent plus, c&#39;est la bernaiseina...
+Tout se délite.
+L’or, qui faisait votre force, devient votre faiblesse.
+Les hommes ne suivent plus. Ils calculent.
+Un groupe quitte le navire de nuit.
+Un autre tente de s’approprier ce qui reste.
+Les ordres ne suffisent plus.
+Votre autorité s’effondre.
+Vous êtes seul. Ou presque.
 Il ne reste qu’une option viable :
 protéger ce qui peut encore l’être.
-[[garder votre part-&gt;garder une part secrète]] 
-[[tenter un ultime coup-&gt;capture]]</tw-passagedata><tw-passagedata pid="66" name="île aux pigeons" tags="pigeon" position="1725,2900" size="100,100">(display:&quot;Styles&quot;)
+[[garder une part secrète]] 
+[[capture]]</tw-passagedata><tw-passagedata pid="66" name="île aux pigeons" tags="pigeon" position="1725,2900" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
 L’Île aux Pigeons est difficile d’accès.
-Parfaite pour y transportez une partie du trésor.
-Peu d’hommes, peu de bruit.
+Parfaite.
+Vous y transportez une partie du trésor.
+Peu d’hommes. Peu de bruit.
 Vous commencez à comprendre : il ne faut pas un seul point… mais plusieurs.
 [[défricher la jungle]]
 [[revenir à Mahé]]</tw-passagedata><tw-passagedata pid="67" name="fin dispersée" tags="forban" position="1625,3375" size="100,100">(display:&quot;Styles&quot;)
@@ -763,8 +785,10 @@ La convoitise disparait mais les autorités impériales cherchent toujours justi
 [[début de la traque]]</tw-passagedata><tw-passagedata pid="68" name="codifier le chemin" tags="enterre" position="2025,3300" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
 Vous décidez enfin d&#39;encoder la position du trésor, pas dans une carte mais un système de cryptage.
+Inspiré de principes que vous avez observés autrefois chez les francs-maçons. Symboles, correspondances, structures.
 Un langage que seuls quelques initiés pourraient comprendre.
-Le chemin devient une énigme, mais de quelle manière vous pourriez encoder cet emplacement ?
+Vous gravez, encodez, structurez.
+Le chemin devient une énigme.
 
 (if: $macon &gt;= 60)[
 * [[Crypto]]]
@@ -774,21 +798,26 @@ Le chemin devient une énigme, mais de quelle manière vous pourriez encoder cet
 
 </tw-passagedata><tw-passagedata pid="69" name="défricher la jungle" tags="jungle" position="2125,3050" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
-Vous ouvrez un passage, cherchez à travers la jungle, un chemin qui ne soit pas évident.
-Chaque détour a un sens, chaque angle, une indication.
-Vous ne créez pas un accès… vous créez une épreuve, quiconque voudrait chercher votre trésor y passera sa vie.
+Vous ouvrez un passage.
+Pas un chemin évident.
+Un parcours précis, presque rituel.
+Chaque détour a un sens. Chaque angle, une indication.
+Vous ne créez pas un accès… vous créez une épreuve.
 [[s&#39;enfoncer sans laisser de traces]]
 [[enterrer le trésor]]</tw-passagedata><tw-passagedata pid="70" name="s&#39;enfoncer sans laisser de traces" tags="jungle" position="2325,3175" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
-Vous effacez chaque trace derrière vous.
-Branches replacées, sol nivelé, les repères sont invisibles pour un œil non averti.
+Vous effacez derrière vous.
+Branches replacées, sol nivelé, repères invisibles pour un œil non averti.
 Seul quelqu’un connaissant la logique pourrait suivre.
-Le trésor disparaît vraiment cette fois.
-[[enterrer le trésor-&gt;trésor caché]] 
+Le trésor disparaît.
+Vraiment.
+[[trésor caché]] 
 [[codifier le chemin]]</tw-passagedata><tw-passagedata pid="71" name="trésor caché" tags="enterre" position="2225,3400" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
-Le trésor est enfin caché, enterrer dans un monde si vaste, personne ne pourrait le trouver par hasard !
-Mais un secret (qui n&#39;en est déjà plus un) gros comme le votre attire toujours les plus curieux et avides d&#39;or. 
+Le trésor est enfin caché.
+Fragmenté, protégé, invisible.
+
+Mais un secret attire toujours les plus curieux et avides d&#39;or. 
 [[début de la traque]]</tw-passagedata><tw-passagedata pid="72" name="début de la traque" tags="forban" position="2025,3475" size="100,100">(display:&quot;Styles&quot;)
 (display: &quot;BarrePopularite&quot;)
 Les rumeurs enflent : un trésor immense, un capitaine insaisissable.
@@ -815,27 +844,27 @@ Votre corps tombe, mais le message et la légende que vous avez batits, lui, sur
 [[héritage-légende]]</tw-passagedata><tw-passagedata pid="75" name="enterré" tags="enterre" position="250,2950" size="100,100">enterré oui, mais où ? les pistes les plus probables peuvent être les suivantes... J&#39;ai moi même effectué des recherches sur le sujet et sur le cryptogramme, sans prétention de surpasser tous les chercheurs m&#39;ayant précédés, je suis parti du principe qu&#39;un tel trésor ne serait point caché derrière une simple ligne de cryptage.  Compte tenu de l&#39;époque et la valeur plusieurs cryptages sont envisageables : La carte de constellation, le report de symboles, message crypté descriptif. 
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/5c/Cryptogramme_de_La_Buse.jpg?utm_source=fr.wiktionary.org&amp;utm_campaign=index&amp;utm_content=original&quot;style=&quot;width:58%;&quot;&gt;
 
-[[Ile Maurice-&gt;mauricius]]
+[[mauricius]]
 [[les seychelles]]</tw-passagedata><tw-passagedata pid="76" name="dilapidé" tags="equip" position="650,2950" size="100,100">La prise de la Vierge du Cap est un fait historique avéré. Mais un trésor de cette ampleur était généralement partagé entre tout l&#39;équipage. Une fois réparti, l&#39;or, l&#39;argent et les pierres précieuses ont très bien pu être dépensés, échangés ou tout simplement dilapidés, revolés, reperdues.... Cette hypothèse, privilégiée par de nombreux historiens, expliquerait l&#39;absence de découverte majeure, l&#39;or et les pierres précieuese seraient simplement reparties dans un commerce monnétaire mondial. 
 
 Fin
 [[début ]] 
-Voir les théories alternatives
+Voir les débouchées
 [[héritage-légende]] </tw-passagedata><tw-passagedata pid="77" name="légendaire" tags="cors" position="450,2950" size="100,100">La théorie du trésor purement de légende est défendue par une partie de la communauté scientifique. Elle avance que l&#39;histoire du cryptogramme lancé sur l&#39;échafaud est pure invention. Elle aurait été popularisée par Charles de la Roncière en 1934 pour vendre son roman, et le document qu&#39;il a présenté ne serait qu&#39;une supercherie. Le trésor n&#39;aurait alors jamais été caché, ou serait resté insignifiant.
 
 Fin
 [[début ]] 
-Voir les théories alternatives
+Voir les débouchées
 [[héritage-légende]] </tw-passagedata><tw-passagedata pid="78" name="mauricius" tags="enterre" position="150,3150" size="100,100">L&#39;île Maurice suscite un regain d&#39;espoir depuis 2023 avec la découverte de gravures et &quot;la trace de métaux&quot; par un groupe de randonneurs. Un site, protégé par la police locale depuis décembre 2023, a fait l&#39;objet d&#39;une mission archéologique dirigée par une sommité kényane (George Abungu) en 2024. Aucun résultat public n&#39;a été publié depuis....
 
 Fin
 [[début ]] 
-Voir les théories alternatives
+Voir les débouchées
 [[héritage-légende]] </tw-passagedata><tw-passagedata pid="79" name="les seychelles" tags="enterre" position="350,3150" size="100,100">Les Seychelles sur l&#39;île de Mahé, un lieu de découverte en 1923 de sculptures rupestres considérées comme des indices (serpent, tortue, cœurs entrelacés...) par Mme Savy. Un notaire possédait des documents complémentaires, mais l&#39;enquête n&#39;a pas abouti. Aucune découverte majeure n&#39;a été confirmée depuis, bien que ce soit la zone centrale du mythe.
 
 Fin
 [[début ]] 
-Voir les théories alternatives
+Voir les débouchées
 [[héritage-légende]] </tw-passagedata><tw-passagedata pid="80" name="Corsaire " tags="cors" position="600,1100" size="100,100">Vous y prenez goût, plus de cérémonie ou de paprasse administrative, vous êtes dans le vrai. Etre corsaire est bel et bien une passion pour vous. Mais attendre les lettres de marc vous ennuie. Vous voulez vous lancer dans le grand bain, vous rêvez des caraïbes, les plages blanches, le rhum brun et l&#39;eau turquoize, cela vous changera de Calais ! 
 [[mousse opportuniste]] 
 </tw-passagedata><tw-passagedata pid="81" name="Styles" tags="" position="1700,400" size="100,100">&lt;style&gt;
