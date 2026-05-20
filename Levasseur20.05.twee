@@ -1,0 +1,1431 @@
+:: StoryTitle
+Levasseur 
+
+
+:: StoryData
+{
+  "ifid": "69C850B4-D58D-44DE-9F11-21536C969FA9",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "début ",
+  "tag-colors": {
+    "2": "yellow",
+    "3": "green",
+    "4": "purple",
+    "5": "blue",
+    "Maurice": "red",
+    "début": "orange",
+    "fin": "red",
+    "mer": "purple",
+    "tempete": "orange",
+    "jack": "orange",
+    "fm": "blue",
+    "taverne": "red",
+    "port": "green",
+    "cpt": "purple",
+    "fort": "green",
+    "forban": "purple",
+    "pigeon": "purple",
+    "chien": "green",
+    "jungle": "purple",
+    "mahé": "blue",
+    "stlouis": "yellow",
+    "madag": "green",
+    "enterre": "orange",
+    "plagecal": "green",
+    "leut": "green",
+    "serg": "yellow",
+    "cors": "green",
+    "fpbateau": "green",
+    "abord": "green",
+    "vircap": "purple",
+    "taylor": "purple",
+    "tres": "green",
+    "flotte": "purple",
+    "mutin": "blue",
+    "equip": "blue",
+    "capt": "yellow",
+    "exec": "yellow"
+  },
+  "zoom": 0.3
+}
+
+
+:: Antanarivo [madag] {"position":"3500,400","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Les terres de Antananarivo ne sont pas encore unifiées. Chefs locaux et étrangers cohabitent.
+Les pirates s’y installent, construisent des bases qui profitent aussi aux marchands locaux.
+La mer n’est plus seulement un lieu de passage… mais un empire informel, dangereux et plein de vie.
+
+[[chercher son camp]]
+[[s'établir à Madagascar]]
+
+
+
+:: BarrePopularite {"position":"1900,400","size":"100,100"}
+(print: '<meter value="' + (str: $popularite) + '" min="0" max="100" style="width: 200px;"></meter> Popularité : ' + (str: $popularite) + '/100')
+
+
+:: Corsaire [fpbateau] {"position":"1500,800","size":"100,100"}
+La traite d'esclave n'est pas un business si juteux... la paie est correcte mais ne vaut surement pas le mal. Peut-être que dans quelques années, vous pourrez obtenir une promotion, mais ces eaux ont une odeur particulière, lors de votre périple, vous avez vu au loin des bateaux sans pavillon, des pirates. Après avoir discuté avec le capitaine, vous aprennez que Cousin Jacques fut pirate dans les caraïbes quelques années, sa réputation ne précède que son surnom "Sparrow". Peut-être vous aussi receveriez cet appel ? 
+
+[[abandonner]]
+[[mousse opportuniste]]
+
+
+
+:: Corsaire\  [cors] {"position":"600,1100","size":"100,100"}
+Vous y prenez goût, plus de cérémonie ou de paprasse administrative, vous êtes dans le vrai. Etre corsaire est bel et bien une passion pour vous. Mais attendre les lettres de marc vous ennuie. Vous voulez vous lancer dans le grand bain, vous rêvez des caraïbes, les plages blanches, le rhum brun et l'eau turquoize, cela vous changera de Calais ! 
+[[mousse opportuniste]] 
+
+
+
+:: Cousin Jacques [jack] {"position":"500,200","size":"100,100"}
+Vous arrivez chez lui, toujours bien reçu avec un verre de clvados.
+Votre cousin connait du monde, ancien marin pêcheur, il est réputé. Après lui avoir parlé de votre passion pour l'aventure, vous hésitez. Vouslez vous lui parler d'un engagement dans la marine militaire ou marchande ? 
+
+Il vous écrit un mot adressé au capitaine du régiment de calais, ils ont fait les 400 coups ensemble [[bureau capitaine]] 
+Il vous emmène faire la tournée des tavernes pour dégoter un poste de marchand [[port commercial]]
+<script>
+changeMusic("taverne.mp3");
+</script>
+
+
+
+:: Crypto [enterre] {"position":"2450,3350","size":"100,100"}
+<div style="background: #f4e4bc; 
+border: 2px dashed #8b4513; 
+padding: 20px; text-align: center; 
+color: #333; 
+border-radius: 5px;">
+<p>
+<img 
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pigpen_cipher_key.svg/1280px-Pigpen_cipher_key.svg.png"
+style="max-width: 100%; 
+height: auto; 
+display: block; 
+margin: 0 auto 20px auto; 
+border-radius: 5px;">
+</p>
+<p>
+<img 
+src="https://www.mykidstime.com/wp-content/uploads/2019/08/example-of-pigpen-cipher-question.jpg"
+style="max-width: 100%; 
+height: auto; 
+display: block; 
+margin: 0 auto 20px auto; 
+border-radius: 5px;">
+</p>
+    <p style="font-weight: bold; margin-bottom: 10px;">utilisez le codex :</p>
+    
+    <input type="text" id="input-code" placeholder="..." style="padding: 10px; 
+    border: 1px solid #8b4513; 
+    text-transform: uppercase; 
+    text-align: center; 
+    width: 60%;">
+    
+    <button id="btn-valider" style="padding: 10px 20px; 
+    background: #8b4513; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    font-family: sans-serif; 
+    margin-left: 5px;">
+        vérifier
+    </button>
+
+    <div id="resultat" style="margin-top: 15px; font-weight: bold; min-height: 24px;"></div>
+    
+    <div id="lien-suivant" style="display:none; 
+    margin-top: 10px; 
+    background: #d4edda; 
+    padding: 10px;
+    border-radius: 5px;">
+        Félicitations ! [[Continuer->gagne]]
+    </div>
+</div>
+
+<script>
+    (function() {
+       
+        const MOT_CORRECT = "X MARK THE SPOT"; 
+        const input = document.getElementById('input-code');
+        const btn = document.getElementById('btn-valider');
+        const feedback = document.getElementById('resultat');
+        const nextLink = document.getElementById('lien-suivant');
+
+        btn.addEventListener('click', function() {
+            const playerGuess = input.value.trim().toUpperCase();
+            
+            if (playerGuess === MOT_CORRECT) {
+                feedback.innerHTML = "<span style='color: green;'>Le code est correct !</span>";
+                feedback.style.display = "none"; 
+                nextLink.style.display = "block"; 
+                btn.disabled = true;
+                input.disabled = true;
+            } else {
+                feedback.innerHTML = "<span style='color: red;'>Ce n'est pas le bon mot. Réessayez.</span>";
+            }
+        });
+    })();
+</script>
+
+
+:: Crypto0 [enterre] {"position":"2700,3300","size":"100,100"}
+<div style="background: #f4e4bc; border: 2px dashed #8b4513; padding: 20px; text-align: center; color: #333; border-radius: 5px;">
+<p>
+<img 
+src="https://www.mykidstime.com/wp-content/uploads/2019/08/example-of-pigpen-cipher-question.jpg"
+style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px auto; border-radius: 5px;">
+</p>
+    <p style="font-weight: bold; margin-bottom: 10px;">bonne chance pour décoder:</p>
+    
+    <input type="text" id="input-code" placeholder="..." style="padding: 10px; border: 1px solid #8b4513; text-transform: uppercase; text-align: center; width: 60%;">
+    
+    <button id="btn-valider" 
+    style="padding: 10px 20px; 
+    background: #8b4513; 
+    color: white; border: none; 
+    cursor: pointer; 
+    font-family: sans-serif; 
+    margin-left: 5px;">
+    vérifier
+    </button>
+
+    <div id="resultat" style="margin-top: 15px; 
+    font-weight: bold; 
+    min-height: 24px;">
+    </div>
+    
+    <div id="lien-suivant" style="display:none; 
+    margin-top: 10px;
+    background: #d4edda; 
+    padding: 10px; border-radius: 5px;">
+        Félicitations ! [[Continuer l'aventure->gagne]]
+    </div>
+    
+     <div id="lien-perdu" style="display:none; margin-top: 10px; background: #d4edda; padding: 10px; border-radius: 5px;">
+        Félicitations ! [[Continuer->mauvais code]]
+    </div>
+</div>
+<script>
+    (function() {
+       
+        const MOT_CORRECT = "X MARK THE SPOT"; 
+        const input = document.getElementById('input-code');
+        const btn = document.getElementById('btn-valider');
+        const feedback = document.getElementById('resultat');
+        const nextLink = document.getElementById('lien-suivant');
+        const defaite = document.getElementById('lien-perdu');
+
+        btn.addEventListener('click', function() {
+            const playerGuess = input.value.trim().toUpperCase();
+            
+            if (playerGuess === MOT_CORRECT) {
+                feedback.innerHTML = "<span style='color: green;'>Le code est correct !</span>";
+                feedback.style.display = "none"; 
+                nextLink.style.display = "block"; 
+                btn.disabled = true;
+                input.disabled = true;
+            } else {
+                feedback.innerHTML = "<span style='color: red;'>Ce n'est pas le bon mot. Réessayez.</span>";
+                 feedback.style.display = "none"; 
+                nextLink.style.display = "block"; 
+                btn.disabled = true;
+                input.disabled = true;
+            }
+        });
+    })();
+</script>
+
+
+:: Fort [fort] {"position":"800,200","size":"100,100"}
+Vous passez devant une affiche de recrutement de la marine, c'est décidé vous avez l'opportunité de vous échaper de cette vie monotone. Vous vous rendez donc au centre de recrutement dans l'espoir de rejoindre le camp de Boulogne, ils construisent là bas le fleuron des navirs français qui vont de la polynésie en Indochine en passant par Madagascar. Vous entrez des étoiles pleins les yeux. 
+[[bureau du sergent]]
+
+
+
+:: Mahé [mahé] {"position":"3000,400","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+L’île de Mahé est un repaire discret. Peu d’autorité, beaucoup de secrets.
+C’est ici que plusieurs équipages se croisent, échangent informations et butin.
+On vous parle d’un coup exceptionnel : un galion portugais débordant d’or et de pierres précieuses en provenance de Goa.
+Un homme est déjà sur le coup, un nom connu de votre oreille, le capitaine Taylor.
+[[rencontrer Taylor]]
+[[rejoindre Madagascar]]
+
+
+
+:: Maurice [4 stlouis] {"position":"1925,2300","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+L’île Maurice devient un point stratégique.
+
+C’est ici que certains pirates enterrent ou redistribuent leurs richesses. Les dodos ne sont pas de nature trop curieuse à creuser le sable blanc des plages. 
+Mais la pression monte. Les autorités traquent désormais activement les équipages.
+
+
+[[ile aux pigeons]]
+[[Rocher Chien]]
+[[plage des forbans]]
+<script>
+changeMusic("maurice.mp3");
+</script>
+
+
+:: Océan Indien [3] {"position":"3100,100","size":"100,100"}
+Arc III l'Océan Indien
+(set: $popularite to 50)
+(display: "Styles")
+(display: "BarrePopularite")
+Désormais, vous jouez dans la cour des grands, votre réputation peut vite se crée comme elle peut vite se détruire, les mers de l'océan indien sont une vraie mare à comères. gérerz correctement votre réputation et vos hommes vous soutiendront, négligez là et c'est la mutinerie assurée.
+[[Antanarivo]]
+[[Saint-Louis]]
+[[Mahé]]
+
+<script>
+changeMusic("jungle.mp3");
+</script>
+
+
+:: Rocher Chien [chien] {"position":"2325,2600","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Le Rocher Chien est hostile.
+Roches sont coupantes, et les vagues violentes.
+Parfait pour dissimuler… mais aussi pour perdre ceux qui chercheraient.
+Vous comprenez que le lieu lui-même peut être une protection.
+ [[plage des forbans]] 
+ [[s'enfoncer sans laisser de traces]] 
+
+
+:: Saint-Louis [stlouis] {"position":"2700,400","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+À Saint-Louis, la tension est palpable. Les autorités françaises tentent de reprendre le contrôle des eaux environnantes.
+Les pirates y viennent encore, mais discrètement.
+Vous entendez parler d’une vague d'arrestations imminente…
+
+[[se cacher]]
+[[rejoindre Madagascar]]
+
+
+
+:: Styles {"position":"1700,400","size":"100,100"}
+<style>
+meter {
+  width: 200px;
+  height: 20px;
+  border-radius: 10px;
+}
+meter::-webkit-meter-bar {
+  background: #eee;
+  border-radius: 10px;
+}
+meter::-webkit-meter-optimum-value {
+  background: #4caf50;
+  border-radius: 10px;
+}
+</style>
+
+
+:: abandonner [fin] {"position":"1700,800","size":"100,100"}
+Pendant quelques annees, vous vivez presque normalement a la peripherie des empires. La prudence commande. Vous sautez de bateau en bateua, de tonneau en tonneau dans les caraïbes, le rhum a eu raison de votre corps et votre esprit...  Est-ce digne d'un pirate ? 
+[[caraïbes ]] 
+<script>
+changeMusic("défaite.mp3");
+</script>
+
+
+:: accepter la vie de pirate [mer] {"position":"1900,1400","size":"100,100"}
+Vous quittez la côte de nuit. Le pavillon noir n’est hissé qu’en mer.
+Les premières prises sont rapides, brutales. Vous apprenez que la peur vaut plus que les canons.
+Mais très vite, les Caraïbes deviennent trop surveillées. Les grandes fortunes ne passent plus ici.
+Un capitaine évoque une nouvelle route : contourner l’Afrique. Là-bas, les navires des Indes regorgent d’or.
+
+[[route vers l'océan indien]]
+[[continuer dans les caraïbes]]
+<script>
+changeMusic("caraibe.mp3");
+</script>
+
+
+:: bureau capitaine [cpt] {"position":"600,700","size":"100,100"}
+Vous rencontrez le capitaine, un homme humble droit et calme, il vous inspire un rocher qui ne fléchit pas même battu par la mer. Votre confiance bornée réussi néanmoins à le convaincre de vous faire un recrutement facilité.
+
+Vous avez l'occasion de rejoindre des clases de matelot en cours de route, vous avez un tempérament qui plait aux officiers. En arrivant sur la place d'armes, les cadets sont à la file indienne, vous êtes le plus jeune du groupe. Est-ce signe d'engagment précursseur d'une carrière d'amiral ? ou bien le signe de partir, une carrière marchande serait-elle plus adaptée ? 
+
+s'engager [[matelot]]
+préferer la voie marchande [[port commercial seul]] 
+
+
+
+:: bureau du sergent [serg] {"position":"800,500","size":"100,100"}
+On vous donne un tiquet, numéro 44167. On vous dirige vers le burau du sergent, maître d'instruction. Il vous pose des questions personnelles, votre âge, votre expérience... Etant encore jeune, vous n'avez comme talent que le mensonge et il est impressionné de votre "carrière de marin marchand", vous avez déjà aidé votre cousin à décharger des tonneaux. Votre profil et votre caractère l'intéresse, vous poussez le personnage et demandez à rencontrer le lieutenant. 
+[[bureau lieutenant]]
+
+
+
+:: bureau lieutenant [leut] {"position":"800,700","size":"100,100"}
+Le Lieutenant vous reçoit, vous rencontrez un homme ambitieux et borné. Le lieutenant Tapie vous met à l'épreuve, vous questionne, vous coupe la parole, la tension monte mais vous préférez réfléchir à la situation, deviner ce qu'il attend de vous, ce qu'il attendrait de son subbordonnée. Vous décidez d'aquiécer tout ce qu'il dit en y glissant quelques flateries qui finissent par faire effet. Vous expliquez vouloir rejoindre les colonies aux antilles et demandez qui serait en charge de ce genre de mission. Il vous envoie dans le bureau du capitaine.
+[[bureau capitaine]]
+
+
+
+:: cacher le trésor [tempete] {"position":"2900,1300","size":"100,100"}
+(set: $popularite to $popularite - 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous prenez une décision froide.
+L’or ne doit pas être utilisé mais protégé des autres pirates comme des empires.
+Vous cherchez un lieu isolé, discret, difficile d’accès… mais connu de vous seul.
+Une île s’impose : Île Maurice.
+[[partir vers Maurice]]
+
+
+:: capture [capt] {"position":"3025,2200","size":"100,100"}
+(set: $popularite to $popularite - 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Votre fortune n'avait de plus étendue que votre réputation, à l’aube,
+un navire armé, pavillon officiel, tout ça est trop organisé pour être une simple coïncidence.
+Quelqu’un vous a balancé, un Juda.
+Vous tentez de résister, mais vos hommes ne sont plus les mêmes.
+Certains fuient, d’autres se rendent.
+Sur le pont, un officier vous observe longuement.
+Il ne voit pas un homme… mais un symbole, celui de la piraterie.
+[[héritage-légende]]
+
+
+:: capture2 [capt] {"position":"2025,3700","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Ils vous prennent à terre, à l’aube, sans combat.
+Tout est préparé : un encerclement propre, des hommes qui savent déjà qui vous êtes.
+Quelqu’un a parlé, peut-être plusieurs.
+Enchaîné, vous êtes conduit à Saint-Denis pour un procès expéditif.
+La nuit suivant votre "procès" si on peut l'appeler ainsi, on vous réveille. Vous serez exécuté publiquement demain dès l'aube à l'heure où blanchit l'écume. 
+[[exécution]]
+
+
+:: caraïbes\  [2] {"position":"1500,600","size":"100,100"}
+
+Arc II les caraïbes
+(set: $macon to 50)
+[[Corsaire]] 
+
+<script>
+changeMusic("caraibe.mp3");
+</script>
+
+
+:: chercher les pirates au large [mer] {"position":"1100,1500","size":"100,100"}
+Au large, vous trouvez un sloop rapide, discipliné. Rien à voir avec les bandes désorganisées que vous imaginiez.
+À bord, un second vous jauge :
+« Nous cherchons des hommes capables de tenir leur langue. Le capitaine n’aime pas les bavards. »
+
+[[embarquer sans poser de questions]]
+
+[[refuser]]
+
+<script>
+changeMusic("calais.mp3");
+</script>
+
+
+:: chercher son camp [mer] {"position":"3200,425","size":"100,100"}
+(set: $popularite to $popularite - 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous recrutez. Anciens marins, déserteurs, locaux.
+Mais sans réseau, sans routes maîtrisées, vos premières expéditions échouent.
+L’océan Indien ne pardonne pas l’improvisation.
+Vous comprenez trop tard : ici, seuls les hommes déjà intégrés aux grandes routes survivent. Vous remettez en question votre carrière...
+
+[[rejoindre Madagascar]] 
+[[chercher à rejoindre la marine marchande->fin prématurée]]
+
+
+
+:: codifier le chemin [enterre] {"position":"2025,3300","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Vous décidez enfin d'encoder la position du trésor, pas dans une carte mais un système de cryptage.
+Un langage que seuls quelques initiés pourraient comprendre.
+Le chemin devient une énigme, mais de quelle manière vous pourriez encoder cet emplacement ?
+
+(if: $macon >= 60)[
+* [[Crypto]]]
+
+(if: $macon <= 50)[
+* [[Crypto0]]]
+
+
+
+
+:: continuer dans les caraïbes [mer] {"position":"1600,1600","size":"100,100"}
+Vous persistez.
+Quelques coups réussissent, mais rien de décisif, les équipages se fragmentent, les trahisons se multiplient.
+Sans grande vision, la piraterie ici devient une survie, pas une ascension.
+Après la capture d'un distilleur de rhum, vous considérez l'établissement d'un commerce. Le rhum servira aussi bien à consoler qu'a enjoyer, de plus vous connaissez du monde dans ces bassins désormais. 
+
+Vous pouvez aussi bien le refourguer contre quelques pièces et tenter de rejoindre une frégate décidée à partir pour l'Est. Pas plus d'information, les rumeurs du port sont assez floues mais quelques pièces apportent toujours lumière sur vos questions. 
+
+[[refuser]] 
+[[route vers l'océan indien]] 
+
+
+
+:: cumul [fpbateau] {"position":"2425,900","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+les prises s'enchainent, vous retournez donc voir votre accolite. 
+[[traque des navires portugais]] 
+
+
+:: dilapidé [equip] {"position":"650,2950","size":"100,100"}
+La prise de la Vierge du Cap est un fait historique avéré. Mais un trésor de cette ampleur était généralement partagé entre tout l'équipage. Une fois réparti, l'or, l'argent et les pierres précieuses ont très bien pu être dépensés, échangés ou tout simplement dilapidés, revolés, reperdues.... Cette hypothèse, privilégiée par de nombreux historiens, expliquerait l'absence de découverte majeure, l'or et les pierres précieuese seraient simplement reparties dans un commerce monnétaire mondial. 
+
+Fin
+[[début ]] 
+Voir les théories alternatives
+[[héritage-légende]] 
+
+
+:: discuter avec le sommelier [jack] {"position":"1100,1300","size":"100,100"}
+Le sommelier, ancien marin, a l’œil précis. Entre deux bouteilles, il glisse :
+« Les vrais capitaines ne sont plus dans les ports officiels… ils croisent au large de la Jamaïque et des Bahamas. Certains disent qu’un Français, très discret, monte en puissance. Il ne boit pas, ne parle pas… mais ses hommes meurent pour lui. »
+Un nom circule à voix basse, jamais prononcé deux fois.
+
+
+[[chercher les pirates au large]] 
+
+[[ignorer et dormir]]
+
+<script>
+changeMusic("taverne.mp3");
+</script>
+
+
+:: discuter avec les francs-maçons [fm] {"position":"1500,1200","size":"100,100"}
+Dans une salle à l’écart, les symboles et les regards en disent plus que les mots. Ces hommes parlent d’ordre… dans le chaos.
+L’un d’eux vous confie :
+« Les empires s’effondrent toujours à leurs marges. Les pirates ne sont pas des brigands… mais les éclaireurs d’un monde sans roi. »
+Ils évoquent des routes vers l’Afrique et au-delà, vers des îles où l’or circule librement.
+Ils vous enseignent leur système d'encodage 
+<img 
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pigpen_cipher_key.svg/1280px-Pigpen_cipher_key.svg.png"
+style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px auto; border-radius: 5px;">
+(set: $macon to $macon + 10)
+[[suivre leur piste vers l'océan indien]] 
+[[rester dans les caraïbes]]
+
+<script>
+changeMusic("taverne.mp3");
+</script>
+
+
+:: disuter avec le pêcheur [port] {"position":"100,500","size":"100,100"}
+Vous discutez avec un vieux pêcheur, ses filets sont aussi remplis de poissons que votre vie ne l'est d'aventure... Vous décidez de continuer en direction du port commercial.
+[[port commercial seul]]
+
+
+:: début\  [début plagecal] {"position":"500,25","size":"100,100"}
+Arc I Calais 
+
+Calais (France) 1710
+Vous êtes Olivier Levasseur, jeune fils de marin.
+A 15 ans seulement, vous connaissez déjà les bases de la navigation, mais vous êtes rêveur et ambitieux dans un monde rempli d'opportunités, la richesse, vous ne la connaissez qu'à travers les contes et légendes que vous comptait votre père ; Barbe Rousse, le grand amiral pirate vous obsède... Ce matin là, vous décidez de sortir sur la berge, les quelques rayons de soleil si rares en cette saison vous réchaufferont l'esprit.
+
+
+[[Fort]]
+[[plage]]
+[[Cousin Jacques]]
+<script>
+changeMusic("calais.mp3");
+</script>
+
+
+:: début de la traque [forban] {"position":"2025,3475","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Les rumeurs enflent : un trésor immense, un capitaine insaisissable.
+Aux comptoirs et à Saint-Denis, on promet des grâces contre des informations.
+D’anciens alliés parlent, les routes se ferment.
+La traque devient méthodique, et vous en êtes le centre, vous êtes passé de la Buse au mulot.
+[[continuer->capture2]] 
+[[fuir]]
+(if: $popularite <= 30)[
+* [[trahison]]]
+
+
+:: défricher la jungle [jungle] {"position":"2125,3050","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Vous ouvrez un passage, cherchez à travers la jungle, un chemin qui ne soit pas évident.
+Chaque détour a un sens, chaque angle, une indication.
+Vous ne créez pas un accès… vous créez une épreuve, quiconque voudrait chercher votre trésor y passera sa vie.
+[[s'enfoncer sans laisser de traces]]
+[[enterrer le trésor]]
+
+
+:: départ pour les caraïbes [port] {"position":"600,900","size":"100,100"}
+Vous avez un étau sur la tête, à votre porte,
+un armateur bordelais qui vous a engagé comme second officier sur un navire negrier la veille vous donne un uniforme. Vous embarquez et partez pour l'afrique chargé de "babioles" miroirs vieux fusils et autre, objets promis aux chefs locaux en échange d'hommes de villages voisins et de prisonniers. 
+
+La traversee atlantique vous confronte a des horreurs que vous n'aviez pas imagines.
+
+La traite negriere était légale et institutionnalisée. La frontiere morale entre le corsaire, le negrier et le pirate est plus floue qu'il n'y parait dans les recits populaires, les marchands d'esclaves sont avant tout vus comme des marchands.
+
+A l'arrivee en Martinique, quelque chose s'est brise en vous. Sur le quai, des hommes libres vous parlent d'une autre vie possible, aux marges des empires.
+
+[[caraïbes ]] 
+<script>
+changeMusic("calais.mp3");
+</script>
+
+
+:: effondrement de l'équipage [mutin] {"position":"3200,1775","size":"100,100"}
+(set: $popularite to $popularite - 20)
+(display:"Styles")
+(display: "BarrePopularite")
+Tout se délite, l’or, qui faisait votre force, devient votre faiblesse.
+Les hommes ne suivent plus, ils calculent déjà leur part.
+Un groupe quitte le navire de nuit, un autre tente de s’approprier ce qui reste.
+Les ordres ne suffisent plus, c'est la bernaiseina...
+Il ne reste qu’une option viable :
+protéger ce qui peut encore l’être.
+[[garder votre part->garder une part secrète]] 
+[[tenter un ultime coup->capture]]
+
+
+:: embarquer sans poser de questions [mer] {"position":"1300,1800","size":"100,100"}
+Vous montez à bord sans négocier. Sur le pont, personne ne parle inutilement. L’équipage est discipliné, presque militaire, rien à voir avec les bandes de flibustiers que vous imaginiez.
+Très vite, vous comprenez : ce navire n’est pas un repaire de brigands, mais une machine. Chaque homme a un rôle, chaque attaque est calculée,
+Lors d’un abordage, vous prenez l’initiative sans attendre d’ordre. Vous vous illustrez en frappant vite, précisément, vous profitez du chaos pour ouvrir les cales puis la cabine du capitaine.
+Le soir même, un marin murmure : « Tu vois comme tu fonds sur eux au milieu de la bataille ? C'est comme une buse… »
+Le surnom reste au sein de l'équipage.
+Mais les Caraïbes s’essoufflent. Les grandes prises se raréfient. Ceux qui veulent durer parlent déjà d’un autre océan.
+[[route vers l'océan indien]]
+[[continuer dans les caraïbes]]
+
+
+
+:: enterrer le trésor [enterre] {"position":"1925,3100","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Vous creusez profondément.
+Chaque repère est pensé : orientation, roche, végétation.
+Mais surtout, vous notez ces informations.
+Pas sur une carte classique, ce serait trop risqué, encoder le chemin serait la solution ? 
+[[codifier le chemin]]
+[[trouver un autre endroit->Rocher Chien]]
+
+
+:: enterré [enterre] {"position":"250,2950","size":"100,100"}
+enterré oui, mais où ? les pistes les plus probables peuvent être les suivantes... J'ai moi même effectué des recherches sur le sujet et sur le cryptogramme, sans prétention de surpasser tous les chercheurs m'ayant précédés, je suis parti du principe qu'un tel trésor ne serait point caché derrière une simple ligne de cryptage.  Compte tenu de l'époque et la valeur plusieurs cryptages sont envisageables : La carte de constellation, le report de symboles, message crypté descriptif. 
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Cryptogramme_de_La_Buse.jpg?utm_source=fr.wiktionary.org&utm_campaign=index&utm_content=original"style="width:58%;">
+
+[[Ile Maurice->mauricius]]
+[[les seychelles]]
+
+
+:: expédition avec Taylor [abord] {"position":"2800,900","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Vous partez en mer avec Taylor.
+Contrairement aux Caraïbes, ici tout est calculé : routes commerciales, vents, saisons.
+Lors d’un abordage, vous prenez la tête d’un groupe sans attendre.
+Vous frappez, vous désorganisez, vous écrasez les adversaires.
+Après la bataille, un homme lâche en riant :
+« Il fond sur les navires comme une buse. »
+Le surnom reste. Vous n’êtes plus un marin, vous devenez un capitaine.
+[[traque des navires portugais]]
+
+
+:: exécution [exec] {"position":"2025,3900","size":"100,100"}
+(set: $popularite to $popularite +50)
+(display:"Styles")
+(display: "BarrePopularite")
+La foule se presse, curieuse et tendue, le soleil donne un teint cuivré aux vagues.
+Vous montez sur léchaffaud, au moment final, on vous demande vos dernières paroles. Vous lancez un parchemin codé dans la foule.
+« Mon trésor à qui saura le comprendre... »
+Votre corps tombe, mais le message et la légende que vous avez batits, lui, survit.
+[[héritage-légende]]
+
+
+:: fin dispersée [forban] {"position":"1625,3375","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Vos hommes se dispersent, chacun avec ses secrets et sa part du trésor...
+Très vite, les rumeurs s'estompent, le plus gros trésor de l'Histoire de la piraterie est déjà dispersé des indes aux amériques.
+La convoitise disparait mais les autorités impériales cherchent toujours justice de ce braquage.
+[[début de la traque]]
+
+
+:: fin oubliée [fin] {"position":"3300,750","size":"100,100"}
+Vous sombrez dans l'oubli comme tant d'autres et mourez de la malaria 2 ans plus tard...
+[[Océan Indien]] 
+<script>
+changeMusic("défaite.mp3");
+</script>
+
+
+:: fin prématurée [fin] {"position":"3325,575","size":"100,100"}
+Une fin épanouie mais dans l'oublie... Qu'est-il arrivé au marin ambitieux ? 
+[[Océan Indien]] 
+<script>
+changeMusic("défaite.mp3");
+</script>
+
+
+:: fonctions {"position":"1900,200","size":"100,100"}
+[[Styles]] [[BarrePopularite]] [[skill décrypt]] 
+
+
+:: fuir [forban] {"position":"1575,3075","size":"100,100"}
+(set: $popularite to $popularite - 20)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous cédez à la pression.
+Une partie du trésor est embarquée à la hâte tandis que l’autre reste.
+La manœuvre est désordonnée, quelques jours plus tard, vous réalisez :
+vous avez perdu le contrôle de votre propre fortune.
+Ce trésor devait bien disparaître un jour ou l'autre, il s’est dispersé.
+[[fin dispersée]]
+
+
+:: fuite précipitée [tempete] {"position":"3025,2000","size":"100,100"}
+(set: $popularite to $popularite - 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous n’attendez pas.
+Dans la nuit, vous rassemblez ce que vous pouvez, pas tout, jamais tout.
+Le reste est abandonné… ou perdu.
+La fuite est chaotique.
+Un navire surchargé, des hommes nerveux, des routes improvisées.
+Vous survivez ,ais à quel prix ?
+Une partie du trésor a disparu.
+Une partie de votre équipage aussi.
+Vous n’êtes plus en position de dominer.
+Vous êtes en train de réagir.
+(if: $popularite >= 60)[
+* [[partir vers Maurice]]]
+[[effondrement de l'équipage]]
+
+
+:: gagne [enterre] {"position":"2400,3600","size":"100,100"}
+Vous réussisez à encoder sur un cryptogramme le chemin qui mène à votre trésor. 
+[[trésor caché]] 
+
+
+:: garder une part secrète [tres] {"position":"2600,1500","size":"100,100"}
+(set: $popularite to $popularite - 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Dans la confusion du partage, vous détournez une partie du butin.
+Discrètement et méthodiquement, la filouterie et la discression sont vos atouts.
+Quelques hommes fidèles vous suivent.
+Vous comprenez une chose essentielle : ce trésor ne doit pas circuler, il doit disparaître mais où ?
+[[partir vers Maurice]]
+[[rester à Madagascar]]
+
+
+
+:: héritage-légende [5] {"position":"450,2750","size":"100,100"}
+La trajectoire de Levasseur, dit La Buse, reste globalement confirmée par les archives maritimes : attaques dans les Caraïbes, puis bascule dans l’océan Indien, captures audacieuses et montée en puissance rapide. Les historiens s’accordent sur l’existence de ses prises, notamment le spectaculaire assaut de la Vierge du Cap.
+
+Mais à partir de sa capture et de son exécution, la frontière entre histoire et récit devient floue. Le fameux cryptogramme, censé révéler l’emplacement d’un trésor colossal, n’apparaît que tardivement dans les sources, plusieurs décennies après les faits supposés. Son authenticité est aujourd’hui encore débattue : document original, reconstruction, ou légende amplifiée par les chasseurs de trésors.
+
+Quant au butin, aucune trace tangible ne permet de trancher. A-t-il été dilapidé entre équipages rivaux, dispersé lors des fuites, enterré sur les côtes de l’île Maurice ou perdu en mer dans des naufrages successifs ? Chaque hypothèse trouve ses partisans, aucune ne s’impose définitivement.
+
+Le cryptogramme lui-même, malgré des siècles d’analyses, de tentatives de déchiffrement et de spéculations, n’a jamais conduit avec certitude à un trésor retrouvé. Il demeure un texte ouvert, un système de signes sans solution unanimement acceptée.
+
+Ainsi, Levasseur oscille entre deux héritages : celui d’un pirate historique bien réel, et celui d’une énigme qui continue de survivre à son auteur.
+
+mais alors que pensez vous le trésor est il dilapidé ou bien caché et si oui où ? 
+[[dilapidé]]
+[[enterré]]
+[[légendaire]]
+<script>
+changeMusic("taverne.mp3");
+</script>
+
+
+
+:: ignorer et dormir [taverne] {"position":"1300,1200","size":"100,100"}
+
+La nuit ne vous porte pas conseil mais questionnement, l'histoire du sommelier vous intrigue, vous repensez à ces bruits courant les pontons de ports. Vouvous mettez en route vers la seconde taverne la plus populaire de Saint-Domingue. 
+
+[[discuter avec les francs-maçons]] 
+
+
+
+:: ile aux pigeons [pigeon] {"position":"1950,2600","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Un îlot discret, parfait pour dissimuler une partie du butin.
+Les repères sont subtils : rochers, arbres, orientation du soleil.
+Certains parlent d’un système de cryptage laissé par les capitaines eux-mêmes. Mais les anglais et les français ne sont jamais loin, leur position est bien établie ici. 
+
+(if: $popularite >= 40)[
+* [[enterrer le trésor]]]
+[[revenir à Mahé]]
+
+
+:: imposer votre autorité [equip] {"position":"2800,1500","size":"100,100"}
+(set: $popularite to $popularite + 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous prenez le contrôle. Sans violence inutile, mais sans hésitation car votre réputation suffit.
+Certains contestent... et disparaissent rapidement.
+Vous n’êtes plus un second ni un capitaine mais LE capitaine.
+vous avez néanmoins un fardeau :
+un trésor trop vaste pour être utilisé d'une vie, même 15 ne suffiraient pas.
+[[organiser la flotte]] Se reposer sur ses loriers ? très peu pour vous 
+[[cacher le trésor]] 
+
+
+:: les seychelles [enterre] {"position":"350,3150","size":"100,100"}
+Les Seychelles sur l'île de Mahé, un lieu de découverte en 1923 de sculptures rupestres considérées comme des indices (serpent, tortue, cœurs entrelacés...) par Mme Savy. Un notaire possédait des documents complémentaires, mais l'enquête n'a pas abouti. Aucune découverte majeure n'a été confirmée depuis, bien que ce soit la zone centrale du mythe.
+
+Fin
+[[début ]] 
+Voir les théories alternatives
+[[héritage-légende]] 
+
+
+:: légendaire [cors] {"position":"450,2950","size":"100,100"}
+La théorie du trésor purement de légende est défendue par une partie de la communauté scientifique. Elle avance que l'histoire du cryptogramme lancé sur l'échafaud est pure invention. Elle aurait été popularisée par Charles de la Roncière en 1934 pour vendre son roman, et le document qu'il a présenté ne serait qu'une supercherie. Le trésor n'aurait alors jamais été caché, ou serait resté insignifiant.
+
+Fin
+[[début ]] 
+Voir les théories alternatives
+[[héritage-légende]] 
+
+
+:: matelot [cors] {"position":"400,900","size":"100,100"}
+Votre méthodologie et votre capacité à anticiper vous fait monter les échellons. En tant qu'officier de la marine française, vous n'avez pas besoin de vous battre pour l'honneur. C'est l'or qui attire votre attention de manière croissante. de Surcouf, vous profitez de la guerre d'Espagne pour devenir corsaire et au service d'une lettre de marc et non plus de votre uniforme, vous dirigez des opérations bien plus palpitantes. 
+
+[[Corsaire ]] 
+
+
+
+:: mauricius [enterre] {"position":"150,3150","size":"100,100"}
+L'île Maurice suscite un regain d'espoir depuis 2023 avec la découverte de gravures et "la trace de métaux" par un groupe de randonneurs. Un site, protégé par la police locale depuis décembre 2023, a fait l'objet d'une mission archéologique dirigée par une sommité kényane (George Abungu) en 2024. Aucun résultat public n'a été publié depuis....
+
+Fin
+[[début ]] 
+Voir les théories alternatives
+[[héritage-légende]] 
+
+
+:: mauvais code [enterre] {"position":"2700,3600","size":"100,100"}
+
+comment trouver un encodage qui soit à la fois sécurisé et compréhensible ?
+(set: $macon to $macon - 10)
+
+(if: $macon >= 30)[
+* [[réessayer->Crypto0]]]
+
+(if: $macon <= 30)[
+* [[trahison1]]]
+
+
+:: mousse opportuniste [mer] {"position":"1500,1000","size":"100,100"}
+Vous embarquez sous les ordres du capitaine Morin, a bord du Saint-Esprit. La guerre de Succession d'Espagne bat son plein et les navires hollandais et anglais sont des proies.
+
+Votre premiere prise, une flute marchande chargee de draps vous rapporte une part convenable. Vous apprenez vite la navigation, le combat à l'abordage, la gestion d'un equipage composite, c'est pour vous comme un jeu mais qui peut rapporter gros. 
+
+Mais les bonnes choses ont une fin la paix d'Utrecht est signée en 1713, du jour au lendemain, votre metier n'existe plus, plus de lettres de marque, plus de prime, plus déquipage.
+
+Vous décidez de vous arrêter dans cette taverne de martinique pour noyer votre malheur, mais sans le savoir, cette halte sera décisive. 
+[[rejoindre un équipage]]
+[[discuter avec le sommelier]]
+[[discuter avec les francs-maçons]]
+
+
+
+:: organiser la flotte [flotte] {"position":"3125,1575","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Vous tentez de structurer votre puissance. Plusieurs navires, plusieurs capitaines sous vos ordres, Barberousse reste votre modèle, mais l’or corrompt tout.
+Les alliances sont fragiles, les fidélités achetées.
+Un capitaine disparaît avec une part du trésor.
+Un autre négocie avec les autorités.
+Vous perdez le contrôle, le doute est un luce que même le capitaine le plus riche ne peut se permettre, vous devez agir.
+(if: $popularite >= 60)[
+* [[cacher le trésor]]]
+[[effondrement de l'équipage]]
+
+
+:: partage du butin [mer] {"position":"2500,1300","size":"100,100"}
+(set: $popularite to $popularite + 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Le pont du galion est silencieux. Trop silencieux.
+L’or ne fait pas seulement rêver… il divise.
+John Taylor impose une répartition stricte, chaque homme reçoit une part colossale.
+Mais très vite, des tensions apparaissent, certains veulent rentrer en Europe. D’autres disparaître, d’autres encore… continuer.
+Vous observez.
+Ce trésor est trop grand pour être simplement dépensé en rhum, en femmes... et en bière nom de Dieu.
+[[suivre Taylor]] 
+[[garder une part secrète]] pour votre retraite et celle de vos enfants, ils ne connaitront pas la misère.
+[[imposer votre autorité]] vous êtes le capitaine, la part du lion vous revient
+
+
+:: partir vers Maurice [mer] {"position":"2900,1800","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+La traversée est tendue, vos hommes savent que ce butin est aussi leur fardeau.
+Certains murmurent, d’autres complotent.
+Vous maintenez le cap malgré les vents de couloir...
+À l’approche de Île Maurice, vous comprenez que tout va se jouer ici, il va s'agir de disparaitre avec son or sans laisser de trace.
+[[Maurice]]
+
+
+:: petites prises [abord] {"position":"2400,750","size":"100,100"}
+(set: $popularite to $popularite + 10)
+(display:"Styles")
+(display: "BarrePopularite")
+vous vous rabattez sur les navirs allemands ou néérlandais, qu'importe le pavillon, leur défense est médiore, presque autant que leur butin mais la réussite des assauts entrainent votre équipage.
+
+[[cumul]] 
+
+
+:: plage [plagecal] {"position":"100,200","size":"100,100"}
+Vous décidez de marcher le long de la plage de Calais, un des rares jours sans pluie. 
+le sable est néanmoins froid, les mouettes vous inspirent une liberté dont vous ne pouvez que rêver... Vous voyez un pêcheur le long de la berge, son filet est aussi rempli que votre vie est passionnante. 
+
+[[disuter avec le pêcheur]]
+[[songer le long de la rive]]
+
+
+
+
+:: plage des forbans [forban] {"position":"1625,2600","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+La Plage des Forbans porte bien son nom.
+Sable large, accès discret, parfaite pour débarquer sans être vu.
+Votre équipage s’installe. Le trésor est là, sous bâche, trop massif pour être manipulé en une fois.
+Les hommes s’impatientent, certains veulent partir immédiatement.
+Vous savez que rester trop longtemps ici est dangereux.
+[[fuir]] 
+[[île aux pigeons]]
+
+
+:: port commercial [taverne] {"position":"400,700","size":"100,100"}
+Votre cousin vous introduit à plusieurs capitaines marchands, tous plus véreux les uns que les autres. Vous passez la journée avec lui à la taverne du port. 
+
+Vous vou couchez tard, enivré sans même vous souvenir d'un seul nom de capitaine. 
+
+le lendemain, on toc à votre porte...
+[[ouvrir->départ pour les caraïbes]] 
+
+
+
+
+:: port commercial seul [port] {"position":"350,500","size":"100,100"}
+Visite du port commercial, ici les marchandises bourgent dans tous les sens, vous observez ces marins dont les vies sont remplies d'aventures les plus passionnantes les unes que les autres. Votre cousin Jacques a parcouru les mers dans sa jeunesse, il vous raconte toujours des histoires folles, vous décidez de lui rendre visite.
+
+[[Cousin Jacques]] 
+
+
+
+
+:: prise de la Vierge du Cap [vircap] {"position":"2700,1100","size":"100,100"}
+(set: $popularite to $popularite + 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Le 8 avril 1721.
+Dans la rade, le navire est là : la Nossa Senhora do Cabo.
+Un navire immense, vulnérable. Ses canons ont étés démontés pendant la tempête.
+L’attaque est fulugurante, chaotique, vous n'aviez pas idée du butin.
+Lorsque vous montez à bord, vous comprenez immédiatement :
+de l'or, des diamants et trésors sacrés… une richesse impossible à compter, plus que n'importe quel trésor.
+C’est plus qu’une prise, c’est un basculement dans l'Histoire de la piraterie.
+c'est là qu'Olivier Levasseur dit La Buse, entre dans l’histoire.
+[[partage du butin]] votre équipage est tout aussi méritant. le code de la piraterie est strict : le capitaine n'est pas un tyran.
+[[cacher le trésor]] il est trop gros pour être dépensé en une vie, le cacher serait sage
+<script>
+changeMusic("pirate.mp3");
+</script>
+
+
+:: refuser [fin] {"position":"1400,1600","size":"100,100"}
+
+Vous restez à quai, observant les départs successifs. Les navires sans pavillon disparaissent à l’horizon… et avec eux, les récits de fortunes.
+Les semaines passent. Vous entendez parler de prises spectaculaires, mais toujours ailleurs. Toujours trop loin.
+Vous avez choisi la prudence. Peut-être trop tôt.
+
+[[caraïbes ]] 
+<script>
+changeMusic("défaite.mp3");
+</script>
+
+
+:: refuser et chercher commerce honnête [mer] {"position":"1700,1400","size":"100,100"}
+Vous choisissez une autre voie. Un capitaine marchand vous engage.
+Le travail est régulier. Les profits modestes mais sûrs. Vous transportez du sucre, parfois des hommes.
+La mer reste la même… mais elle ne promet plus rien.
+Avec le temps, vous entendez parler d’un certain Taylor, un pirate devenu légende dans l’océan Indien.
+Un titre que vous auriez pu porter.
+Vous avez choisi la stabilité.
+L’histoire, elle, a choisi d’autres hommes.
+
+[[refuser]]
+<script>
+changeMusic("caraibe.mp3");
+</script>
+
+
+:: rejoindre Madagascar [madag] {"position":"2900,600","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Vous atteignez les côtes de Sainte-Marie.
+C’est ici que tout converge.
+Des épaves, des camps, des équipages venus du monde entier.
+Un véritable port pirate, sans loi… mais pas sans ordre, la piraterie n'es pas chaotique, simplement illégale (c'est déjà ça).
+Vous sentez que votre destin se joue ici.
+[[rencontrer Taylor]] ce nom vous est familier, voyons voir si les bruits sur lui sont vrais
+[[chercher son camp]] vous préférez suivre votre propre voix
+
+
+:: rejoindre un équipage [taverne] {"position":"1900,1200","size":"100,100"}
+La taverne bruisse de récits de mer et de fortunes rapides. Depuis la fin de la Paix d'Utrecht, les corsaires sans lettres de marque errent comme des loups sans meute.
+Un homme vous observe. Il se présente comme timonier sur un brigantin sans pavillon. « Les guerres des rois sont finies… mais la mer, elle, paie toujours. »
+Vous comprenez : il ne s’agit plus de servir un royaume, mais de le piller.
+
+
+[[accepter la vie de pirate]]
+[[refuser et chercher commerce honnête]]
+
+<script>
+changeMusic("taverne.mp3");
+</script>
+
+
+:: rencontrer Taylor [taylor] {"position":"3100,600","size":"100,100"}
+(set: $popularite to $popularite + 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous le trouvez au mouillage, calme, presque distant.
+John Taylor ne parle pas beaucoup, mais il observe tout.
+Il vous teste rapidement devant ses hommes : navigation, sang-froid, discipline.
+Vous tenez bon, mieux encore, vous anticipez ses questions. Il vous prend pour l'accompagner sur une prise de frégate nééerlandaise.
+Lors d’une manœuvre tendue, vous corrigez une erreur avant même qu’elle ne soit donnée en ordre.
+Taylor esquisse un sourire. Il dit avec un accent anglais à trancher à la hache d'abordage : 
+« Tu as du cran mon gars, tu n'es pas un simple pirate, je te prédit un grand avenir dans le métier. »
+Le lendemain, il vous convoque pour signer un contrat, vous êtes désormais accolytes, votre équipage et le sien se retrouvent pour une beuverie en bon et due forme.
+[[expédition avec Taylor]] 
+
+
+:: rester dans les caraïbes [mer] {"position":"1500,1400","size":"100,100"}
+Vous décidez de rester. Les eaux sont familières, les routes connues.
+Mais quelque chose a changé depuis la Paix d'Utrecht.
+Les convois sont mieux protégés. Les ports surveillés. Les opportunités se réduisent.
+Vous participez à quelques prises mineures : sucre, tabac, textiles. Rien qui marque une vie.
+Autour de vous, les meilleurs capitaines disparaissent… vers l’Afrique, dit-on.
+Vous restez. Vous survivez.
+Mais vous ne devenez jamais une légende.
+
+[[refuser]]
+[[continuer dans les caraïbes]]
+<script>
+changeMusic("caraibe.mp3");
+</script>
+
+
+:: rester à Madagascar [madag] {"position":"2500,2000","size":"100,100"}
+(set: $popularite to $popularite - 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous restez.
+Les premières semaines sont fastes.
+Puis les tensions montent. Les hommes boivent, parlent, dépensent.
+Un matin, un navire armé apparaît au large.
+Puis un autre.
+Vous comprenez trop tard : vous avez été repéré.
+[[capture]]
+[[fuite précipitée]]
+
+
+:: retour à Madagascar [madag] {"position":"2400,1700","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+À Sainte-Marie, les camps débordent d’hommes riches et méfiants.
+L’or qui circule, attire les marchands… et les espions.
+Vous voyez déjà les conséquences vous tomber dessus : trahisons, dénonciations, captures.
+Un tel trésor ne peut pas rester ici, du moins entre vos mains.
+[[partir vers Maurice]]
+[[s'établir et prendre le risque]]
+
+
+:: revenir à Mahé [mahé] {"position":"2125,2900","size":"100,100"}
+(set: $popularite to $popularite - 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous pensez pouvoir revenir discrètement à Mahé.
+Mais les routes sont surveillées et votre nom hante les tavernes.
+À peine arrivé, vous êtes reconnu par des matelots...
+[[capture]]
+
+
+:: route vers l'océan indien [mer] {"position":"1900,1800","size":"100,100"}
+Vous embarquez dans un navire volé à la compagnie dess indes orientales, le voyage est long, dangereux. Vous contournez le cap de Bonne-Espérance.
+À mesure que vous approchez, les récits changent : ici, les prises ne sont pas des cargaisons… mais des trésors entiers.
+Des navires portugais, arabes, indiens… chargés pour des années.
+Un nom vous revient clairement désormais : Le capitaine Taylor.
+
+[[Océan Indien]] 
+
+
+
+:: s'enfoncer sans laisser de traces [jungle] {"position":"2325,3175","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Vous effacez chaque trace derrière vous.
+Branches replacées, sol nivelé, les repères sont invisibles pour un œil non averti.
+Seul quelqu’un connaissant la logique pourrait suivre.
+Le trésor disparaît vraiment cette fois.
+[[enterrer le trésor->trésor caché]] 
+[[codifier le chemin]]
+
+
+:: s'établir et prendre le risque [madag] {"position":"2700,1800","size":"100,100"}
+(set: $popularite to $popularite + 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous décidez de rester à Sainte-Marie.
+Vous tentez d’acheter la paix : alliances locales, échanges, protection.
+Pendant un temps, cela fonctionne mais vous devenez un homme influent, respecté et craint, mais le trésor vous dépasse.
+Un soir, un de vos hommes disparaît.. le lendemain, un navire inconnu mouille au large, psychose ou trahison ?
+Vous comprenez que vous n’êtes plus invisible.
+(if: $popularite >= 60)[
+* [[capture]]]
+(if: $popularite <= 60)[
+* [[fuite précipitée]]]
+
+
+
+:: s'établir à Madagascar [madag] {"position":"3500,600","size":"100,100"}
+(set: $popularite to $popularite - 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous choisissez la stabilité. Une terre, une famille, une forme de pouvoir local.
+Vous devenez un homme respecté… mais coupé de la mer.
+Les grandes prises, les grandes histoires, se déroulent ailleurs.
+Vous avez trouvé une vie.
+Mais pas celle qui entre dans la légende.
+[[fin oubliée]] 
+
+
+:: se cacher [stlouis] {"position":"2700,700","size":"100,100"}
+(set: $popularite to $popularite - 10)
+(display:"Styles")
+(display: "BarrePopularite")
+Vous choisissez la prudence. 
+Vous trouvez refuge dans les hauteurs, loin des regards.
+Les semaines deviennent des mois. La mer s’éloigne, et avec elle, les opportunités.
+Vous survivez, mais vous n’avancez plus, pendant ce temps, d’autres fortunes se bâtissent et d’autres noms émergent.
+Le vôtre reste dans l’ombre.
+
+[[fin oubliée]]
+
+
+:: skill décrypt {"position":"2100,400","size":"100,100"}
+(print: '<meter value="' + (str: $macon) + '" min="0" max="100" style="width: 200px;"></meter> skill pig pen : ' + (str: $macon) + '/100')
+
+
+:: songer le long de la rive [plagecal] {"position":"300,200","size":"100,100"}
+Vous continuez votre balade le long de la rive et pensez à ses histoires d'aventure avvec lesquelles vous avez grandi. Vous apercevez le quartier de votre cousin Jacques et décidez de venir le voir, vous en profiterez pour lui souhaiter un joyeux anniversaire en retard.
+[[Cousin Jacques]] 
+
+
+
+:: suivre Taylor [taylor] {"position":"2300,1500","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Taylor choisit la prudence, il veut quitter l’océan Indien avec sa part.
+Mais vous comprenez que ce choix est une fuite.
+L’Europe est trop surveillée les ports sont contrôlés. 
+Vous vous séparez, une amitié stoïque vous uni en plus de cette prise historique.
+Deux visions, deux destins.
+[[retour à Madagascar]]
+[[partir vers Maurice]]
+
+
+:: suivre leur piste vers l'océan indien [mer] {"position":"1700,1200","size":"100,100"}
+Vous prennez des provisions pour le voyage et partez le lendemain avec quelques anciens amis corsaires, le voyage est long, la route est régulièrement recalculée car les vents et courants vous font dériver du cap. En parlant de ce dernier, une halte au cap de bonne espérance vous redonne la foi et décidez de vous renseigner dans les auberges sur les routes marchandes de l'Océan indien.
+[[Océan Indien]] 
+<script>
+changeMusic("caraibe.mp3");
+</script>
+
+
+:: trahison [capt] {"position":"1825,3600","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Vos propres hommes... il n'y avait pas 12 apotres à votre bord mais 12 Judas ! Ils vous ont dénoncé à la marine français moyennant une prime, à peine une miette de ce que contenait la vierge du cap... Trésor qu'ils doivent déjà chercher pour le dilapider dans les tavernes. 
+
+[[capture2]] 
+
+
+:: trahison1 [capt] {"position":"2300,3800","size":"100,100"}
+Vous décidez de faire appel à un de vos subbordonnés pour encoder l'emplacement du trésor car vous en serez incapable. Mais quand la fortune est en jeu, la confiance n'est qu'une illusion...
+
+[[trahison]] 
+
+
+:: traque des navires portugais [fpbateau] {"position":"2600,900","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Les routes sont claires désormais : les navires portugais revenant des Indes sont les plus riches.
+Mais aussi les plus surveillés.
+Une rumeur se confirme : un grand navire, endommagé par une tempête, aurait été contraint de s’arrêter à Saint-Denis.
+Un galion. Chargé au-delà du raisonnable.
+Taylor vous regarde :
+« Si c’est vrai… c’est le coup d’une vie. »
+Vous hochez la tête, mais seriez vous à la hauteur du casse ? 
+
+(if: $popularite <= 60)[
+* [[petites prises]] ]
+(if: $popularite >= 60)[
+* [[prise de la Vierge du Cap]]]
+
+
+:: trésor caché [enterre] {"position":"2225,3400","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+Le trésor est enfin caché, enterrer dans un monde si vaste, personne ne pourrait le trouver par hasard !
+Mais un secret (qui n'en est déjà plus un) gros comme le votre attire toujours les plus curieux et avides d'or. 
+[[début de la traque]]
+
+
+:: île aux pigeons [pigeon] {"position":"1725,2900","size":"100,100"}
+(display:"Styles")
+(display: "BarrePopularite")
+L’Île aux Pigeons est difficile d’accès.
+Parfaite pour y transportez une partie du trésor.
+Peu d’hommes, peu de bruit.
+Vous commencez à comprendre : il ne faut pas un seul point… mais plusieurs.
+[[défricher la jungle]]
+[[revenir à Mahé]]
+
+
+:: StoryScript [script]
+window.bgMusic = new Audio();
+window.bgMusic.loop = true;
+window.bgMusic.volume = 0.35;
+
+window.changeMusic = function(track) {
+    if (window.bgMusic.src.includes(track)) {
+        return;
+    }
+    window.bgMusic.src = track;
+
+    window.bgMusic.play().catch(() => {
+
+        document.addEventListener("click", function () {
+            window.bgMusic.play();
+        }, { once: true });
+
+    });
+};
+
+:: StoryStylesheet [stylesheet]
+tw-story {
+  position: fixed;
+  top: 0 ;
+  left: 0 ;
+  width: 100vw ;
+  height: 100vh;
+  padding: 5vh 20% ;
+  box-sizing: border-box ;
+  overflow-y: auto ;
+  background-color: #1a0a00;
+  background-size: cover ;
+  background-position: center center ;
+  background-repeat: no-repeat ;
+
+}
+
+
+tw-sidebar {
+  position: fixed;
+  top: 1em ;
+  left: 1em ;
+  z-index: 999;
+  opacity: 0.6;
+}
+
+tw-sidebar:hover {
+  opacity: 1;
+}
+
+
+tw-story[tags~="taverne"] {
+  background-image: url("https://i.makeagif.com/media/1-09-2022/IDmrci.gif");
+  background-size: cover;
+    margin: 0;              
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+tw-story[tags~="jack"] {
+  background-image: url("https://boutique.titouanlamazou.com/wp-content/uploads/2020/11/Renaud_La-closerie_2001_REN-01_S.jpg");
+}
+
+
+tw-story[tags~="mer"] {
+  background-image: url("https://lh3.googleusercontent.com/proxy/joVg9q3QvuZ0p6me4lmNw8vvCWj1rCPr8JHBODf8N3FaLpWXPDDuyDYrI1nCT9T3C3KzKp04ErXZ6f1-If117uVJoCyUsTUn");
+}
+
+tw-story[tags~="tempete"] {
+  background-image: url("https://i.pinimg.com/originals/81/2a/42/812a428c837e1a6bcb7bbced28b68706.gif");
+}
+
+tw-story[tags~="fm"] {
+  background-image: url("https://450.fm/wp-content/uploads/2025/02/Loge-Espagne-elconfidencial.jpg");
+}
+
+tw-story[tags~="port"] {
+  background-image: url("https://histoire-image.org/sites/default/files/2021-11/bir2_lacour_001f.jpg");
+}
+
+tw-story[tags~="cpt"] {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Le_roi_Louis_XVIII_dans_son_cabinet_de_travail_des_Tuileries_%28bgw17_0044%29.jpg/3840px-Le_roi_Louis_XVIII_dans_son_cabinet_de_travail_des_Tuileries_%28bgw17_0044%29.jpg");
+}
+
+tw-story[tags~="fort"] {
+  background-image: url("https://blog.nationalmuseum.ch/app/uploads/instruktoren-bei-der-ausbildung-von-infanterie-rekruten-um-1830.webp");
+}
+
+tw-story[tags~="forban"] {
+  background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/00/8a/6b/la-spiaggia-di-anse-forbans.jpg?w=1200&h=-1&s=1");
+}
+
+
+tw-story[tags~="pigeon"] {
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/1/12/Pigeon_House_Rock.jpg");
+}
+    
+  tw-story[tags~="chien"] {
+  background-image: url("https://cdt29.media.tourinsoft.eu/upload/image001-41.jpg");
+}  
+    
+  tw-story[tags~="jungle"] {
+  background-image: url("https://www.papierpeintpanoramique.ch/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/0/w04826-small.jpg ");
+}     
+
+
+tw-story[tags~="mahé"] {
+background-image: url("https://thumbs.dreamstime.com/b/morne-seychellois-national-park-mahe-les-seychelles-70015569.jpg");
+}  
+
+tw-story[tags~="stlouis"] {
+background-image: url("https://www.reunionnaisdumonde.com/IMG/jpg/spile_port_de_saint-pierre_a_la_fin_du_19eme_siecle.jpg");
+}  
+  
+tw-story[tags~="madag"] {
+background-image: 
+url("https://www.wildfrontierstravel.com/media/cache/opengraph/upload/mirror/www-wildfrontierstravel-com/297cba7f_ee9c78069e217f5980c6f320169a6ce9.jpeg");
+} 
+
+
+tw-story[tags~="taylor"] {
+background-image: 
+url("");
+} 
+
+tw-story[tags~="plagecal"] {
+background-image: 
+url("https://media.decathlon-outdoor.com/1cxTamFss5TdJXddsQFJE8/decouverte-plage-calais.jpg");
+}
+
+tw-story[tags~="leut"] {
+background-image: 
+url("https://www.patrimoinegeneve.ch/fileadmin_genf/Des_succes/GE_2015_04_29_Musee_Art_Histoire_raum_4_copy.jpg");
+}
+
+tw-story[tags~="serg"] {
+background-image: 
+url("https://fr-backrooms-wiki.wdfiles.com/local--resized-images/entity-18/bureau/medium.jpg");
+}
+
+tw-story[tags~="cors"] {
+background-image: 
+url("https://media.ouest-france.fr/v1/pictures/MjAyNDExN2Q4MGQ4ZjhiMjYyZGMxNDExMWExZTljZDVmNzVhOTI?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=b14d75e321952a78c574fe493753bbd479f42c783b3a98cba550cef48163a030");
+}
+
+tw-story[tags~="fpbateau"] {
+background-image: 
+url("https://img.magnific.com/photos-premium/navire-coffre-bois-grande-boite-bois-devant_1314467-115931.jpg?w=360");
+}
+
+tw-story[tags~="abord"] {
+background-image: 
+url("https://theatrum-belli.com/wp-content/uploads/2019/04/Pirates-4.jpg");
+}
+
+tw-story[tags~="vircap"] {
+background-image: 
+url("https://alfutuhat.com/histoire/Barbaresques/images/mb22.jpg");
+}
+
+tw-story[tags~="taylor"] {
+background-image: 
+url("https://i.natgeofe.com/n/03370a52-d8d9-45d9-a7ce-d467a4f984e5/01piratebooktalk.jpg");
+}
+
+tw-story[tags~="tres"] {
+background-image: 
+url("https://i.ytimg.com/vi/4_ibode4fdc/sddefault.jpg?v=609d925f");
+}
+tw-story[tags~="flotte"] {
+background-image: 
+url("https://www.pirates-corsaires.com/img4/san-jose-bataille-de-baru-pf.jpg");
+}
+tw-story[tags~="mutin"] {
+background-image: 
+url("https://www.pirates-corsaires.com/img5/mutinerie-hms-bounty.jpg");
+}
+
+tw-story[tags~="equip"] {
+background-image: 
+url("https://static.wikia.nocookie.net/piratesdescaraibes/images/0/04/Ayyéyéoyyéa.jpg/revision/latest/scale-to-width-down/1000?cb=20111230175021&path-prefix=fr");
+}
+
+tw-story[tags~="capt"] {
+background-image: 
+url("https://static0.srcdn.com/wordpress/wp-content/uploads/2024/07/michael-dorman-as-gold-roger-during-his-execution-in-loguetown-in-one-piece.jpeg?q=70&fit=contain&w=750&h=422&dpr=1");
+}
+
+tw-story[tags~="exec"] {
+background-image: 
+url("https://image.over-blog.com/Akpj96eEaUSQvijnvp2oxOFLcHU=/filters:no_upscale()/image%2F3292067%2F20231005%2Fob_86ee54_vlcsnap-2023-10-05-22h52m46s353.png");
+}
+
+tw-story[tags~="enterre"] {
+background-image: 
+url("https://thumbs.dreamstime.com/b/poitrine-au-trésor-cachée-dans-une-jungle-éclairée-par-le-soleil-un-coffre-en-bois-avec-chaîne-métallique-se-trouve-sur-392574791.jpg");
+}
+
+
+
+tw-passage {
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20250705/pngtree-a-blank-parchment-texture-with-soft-warm-tones-and-subtle-gradients-image_17465137.webp");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: rgba(240, 210, 160, 0.85);
+  padding: 3em 4em ;
+  border-radius: 8px;
+  color: #2b1a00;
+  max-width: 650px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  opacity:80%; 
+}
