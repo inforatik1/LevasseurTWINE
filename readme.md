@@ -19,6 +19,16 @@ Le jeu fonctionne mieux sur **Twine** mais est jouable dans le navigateur via le
   Le joueur explore les théories les plus plausibles scientifiquement à la fin.
 - Nombreuses **références culture pop** cachées dans le jeu.
 
+## Modules, librairies et scripts intégrés
+
+- **Twine 2** (Harlowe) : moteur de narration interactive.
+
+## Installation et Lancement
+
+1. Téléchargez le fichier `index.html` depuis le dépôt ou [itch.io](https://admirzheng.itch.io/levasseur).
+2. Ouvrez-le dans le navigateur.
+
+
 ## Progression et transformation
 
 L’aspect de la transformation vient de la progression et des chemins qui mènent à la piraterie.  
@@ -45,36 +55,55 @@ Sons provenant de [Pixabay](https://pixabay.com/) :
 
 ### Images de fond
 
-- [Image 1](https://boutique.titouanlamazou.com/wp-content/uploads/2020/11/Renaud_La-closerie_2001_REN-01_S.jpg)
-- [Image 2](https://lh3.googleusercontent.com/proxy/joVg9q3QvuZ0p6me4lmNw8vvCWj1rCPr8JHBODf8N3FaLpWXPDDuyDYrI1nCT9T3C3KzKp04ErXZ6f1-If117uVJoCyUsTUn)
-- [Image 3](https://i.pinimg.com/originals/81/2a/42/812a428c837e1a6bcb7bbced28b68706.gif)
-- [Image 4](https://450.fm/wp-content/uploads/2025/02/Loge-Espagne-elconfidencial.jpg)
-- [Image 5](https://histoire-image.org/sites/default/files/2021-11/bir2_lacour_001f.jpg)
-- [Image 6](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Le_roi_Louis_XVIII_dans_son_cabinet_de_travail_des_Tuileries_%28bgw17_0044%29.jpg/3840px-Le_roi_Louis_XVIII_dans_son_cabinet_de_travail_des_Tuileries_%28bgw17_0044%29.jpg)
-- [Image 7](https://blog.nationalmuseum.ch/app/uploads/instruktoren-bei-der-ausbildung-von-infanterie-rekruten-um-1830.webp)
-- [Image 8](https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/00/8a/6b/la-spiaggia-di-anse-forbans.jpg?w=1200&h=-1&s=1)
-- [Image 9](https://upload.wikimedia.org/wikipedia/commons/1/12/Pigeon_House_Rock.jpg)
-- [Image 10](https://cdt29.media.tourinsoft.eu/upload/image001-41.jpg)
-- [Image 11](https://www.papierpeintpanoramique.ch/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/0/w04826-small.jpg)
-- [Image 12](https://thumbs.dreamstime.com/b/morne-seychellois-national-park-mahe-les-seychelles-70015569.jpg)
-- [Image 13](https://www.reunionnaisdumonde.com/IMG/jpg/spile_port_de_saint-pierre_a_la_fin_du_19eme_siecle.jpg)
-- [Image 14](https://www.wildfrontierstravel.com/media/cache/opengraph/upload/mirror/www-wildfrontierstravel-com/297cba7f_ee9c78069e217f5980c6f320169a6ce9.jpeg)
-- [Image 15](https://media.decathlon-outdoor.com/1cxTamFss5TdJXddsQFJE8/decouverte-plage-calais.jpg)
-- [Image 16](https://www.patrimoinegeneve.ch/fileadmin_genf/Des_succes/GE_2015_04_29_Musee_Art_Histoire_raum_4_copy.jpg)
-- [Image 17](https://fr-backrooms-wiki.wdfiles.com/local--resized-images/entity-18/bureau/medium.jpg)
-- [Image 18](https://media.ouest-france.fr/v1/pictures/MjAyNDExN2Q4MGQ4ZjhiMjYyZGMxNDExMWExZTljZDVmNzVhOTI?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=b14d75e321952a78c574fe493753bbd479f42c783b3a98cba550cef48163a030)
-- [Image 19](https://img.magnific.com/photos-premium/navire-coffre-bois-grande-boite-bois-devant_1314467-115931.jpg?w=360)
-- [Image 20](https://theatrum-belli.com/wp-content/uploads/2019/04/Pirates-4.jpg)
-- [Image 21](https://alfutuhat.com/histoire/Barbaresques/images/mb22.jpg)
-- [Image 22](https://i.natgeofe.com/n/03370a52-d8d9-45d9-a7ce-d467a4f984e5/01piratebooktalk.jpg)
-- [Image 23](https://i.ytimg.com/vi/4_ibode4fdc/sddefault.jpg?v=609d925f)
-- [Image 24](https://www.pirates-corsaires.com/img4/san-jose-bataille-de-baru-pf.jpg)
-- [Image 25](https://www.pirates-corsaires.com/img5/mutinerie-hms-bounty.jpg)
-- [Image 26](https://static.wikia.nocookie.net/piratesdescaraibes/images/0/04/Ayyéyéoyyéa.jpg/revision/latest/scale-to-width-down/1000?cb=20111230175021&path-prefix=fr)
-- [Image 27](https://static0.srcdn.com/wordpress/wp-content/uploads/2024/07/michael-dorman-as-gold-roger-during-his-execution-in-loguetown-in-one-piece.jpeg?q=70&fit=contain&w=750&h=422&dpr=1)
-- [Image 28](https://image.over-blog.com/Akpj96eEaUSQvijnvp2oxOFLcHU=/filters:no_upscale()/image%2F3292067%2F20231005%2Fob_86ee54_vlcsnap-2023-10-05-22h52m46s353.png)
-- [Image 29](https://thumbs.dreamstime.com/b/poitrine-au-trésor-cachée-dans-une-jungle-éclairée-par-le-soleil-un-coffre-en-bois-avec-chaîne-métallique-se-trouve-sur-392574791.jpg)
+- [Image 1](https://images.pexels.com/photos/29823906/pexels-photo-29823906.jpeg?_gl=11bcuctl_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTI1NTgkajQ0JGwwJGgw)
+- [Image 2](https://images.pexels.com/photos/12158581/pexels-photo-12158581.jpeg?_gl=1*1ix29k3*_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTIzNjQkajU5JGwwJGgw)
+-[Image 3](https://images.pexels.com/photos/16588033/pexels-photo-16588033.jpeg?_gl=114av5nn_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTI1MDckajMyJGwwJGgw)
+- [Image 4](https://images.pexels.com/photos/9764167/pexels-photo-9764167.jpeg?_gl=1a47smp_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTI2MjIkajQxJGwwJGgw)
+- [Image 5](https://images.pexels.com/photos/31270195/pexels-photo-31270195.jpeg?_gl=1*178chm5*_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTI2ODIkajQ3JGwwJGgw)
+- [Image 6](https://images.pexels.com/photos/9390981/pexels-photo-9390981.jpeg?_gl=11ea74sy_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTMwNDUkajM1JGwwJGgw)
+- [Image 7](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Le_roi_Louis_XVIII_dans_son_cabinet_de_travail_des_Tuileries_%28bgw17_0044%29.jpg/3840px-Le_roi_Louis_XVIII_dans_son_cabinet_de_travail_des_Tuileries_%28bgw17_0044%29.jpg)
+- [Image 8](https://images.pexels.com/photos/9267432/pexels-photo-9267432.jpeg?_gl=1*1ksuhm0*_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTMxMTgkajM3JGwwJGgw)
+- [Image 9](https://images.pexels.com/photos/12028282/pexels-photo-12028282.jpeg?_gl=11fu47mu_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTMyMTgkajU5JGwwJGgw)
+- [Image 10](https://images.pexels.com/photos/5048704/pexels-photo-5048704.jpeg?_gl=1*1s8bu36*_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTMyNjUkajEyJGwwJGgw)
+- [Image 11](https://images.pexels.com/photos/32544307/pexels-photo-32544307.jpeg?_gl=110th13r_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTMzMTYkajMyJGwwJGgw)
+- [Image 12](https://www.papierpeintpanoramique.ch/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/0/w04826-small.jpg)
+- [Image 13](https://images.pexels.com/photos/13280841/pexels-photo-13280841.jpeg?_gl=11rvycbr_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTMzOTckajEzJGwwJGgw)
+- [Image 14](https://images.pexels.com/photos/27920690/pexels-photo-27920690.jpeg?_gl=1cqh8j4_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTM0ODYkajU5JGwwJGgw)
+- [Image 15](https://images.pexels.com/photos/5486345/pexels-photo-5486345.jpeg?_gl=115773sn_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTM1NzQkajM5JGwwJGgw)
+- [Image 16](https://images.pexels.com/photos/28829985/pexels-photo-28829985.jpeg?_gl=119tc9id_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTM2ODMkajM4JGwwJGgw) (tag taylor)
+- [Image 17](https://images.pexels.com/photos/15688904/pexels-photo-15688904.jpeg?_gl=1*6xuwu5*_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTM3MjQkajU5JGwwJGgw)
+- [Image 18](https://images.pexels.com/photos/32772137/pexels-photo-32772137.jpeg?_gl=1*1nvisr0*_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTM4MzUkajIyJGwwJGgw)
+- [Image 19](https://images.pexels.com/photos/27409011/pexels-photo-27409011.jpeg?_gl=1v3z25i_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTM3NzQkajkkbDAkaDA.)
+- [Image 20](https://images.pexels.com/photos/5736615/pexels-photo-5736615.jpeg?_gl=1bl3ua0_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTM4OTIkajQ1JGwwJGgw)
+- [Image 21](https://images.pexels.com/photos/5022680/pexels-photo-5022680.jpeg?_gl=1v4o4hs_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTM5OTIkajIzJGwwJGgw)
+- [Image 22](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Nicholas_Cammillieri_-_Combat_du_Corsaire_%27La_Mouche%27_%28cropped%29.jpg/960px-Nicholas_Cammillieri_-_Combat_du_Corsaire_%27La_Mouche%27_%28cropped%29.jpg)
+- [Image 23](https://images.pexels.com/photos/15657950/pexels-photo-15657950.jpeg?_gl=1shahtf_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTQwOTQkajQyJGwwJGgw) (URL isolée entre les règles)
+- [Image 24](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Pirate_ships_in_battle.jpg/960px-Pirate_ships_in_battle.jpg)
+- [Image 25](https://images.pexels.com/photos/28829985/pexels-photo-28829985.jpeg?_gl=119tc9id_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTM2ODMkajM4JGwwJGgw) (doublon exact de l’Image 16 – tag taylor répété)
+- [Image 26](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Bardo_National_Museum_%28Tunis%29_29.jpg/960px-Bardo_National_Museum_%28Tunis%29_29.jpg)
+- [Image 27](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Pirates_vs_Dutch_Navy.jpg/960px-Pirates_vs_Dutch_Navy.jpg)
+- [Image 28](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/HMS_Bounty.jpg/960px-HMS_Bounty.jpg)
+- [Image 29](https://images.pexels.com/photos/15657950/pexels-photo-15657950.jpeg?_gl=114c98xb_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTU1MDgkajU5JGwwJGgw) (tag equip)
+- [Image 30](https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Hogarth_the_idle_%27prentice.jpg/960px-Hogarth_the_idle_%27prentice.jpg)
+- [Image 31](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Execution_of_pirate_chief.jpg/960px-Execution_of_pirate_chief.jpg)
+- [Image 32](https://images.pexels.com/photos/12875324/pexels-photo-12875324.jpeg?_gl=1*1wraki1*_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTczNTYkajMwJGwwJGgw)
+
 
 ### Parchemin (fond)
 
-- [Parchemin texture](https://png.pngtree.com/thumb_back/fh260/background/20250705/pngtree-a-blank-parchment-texture-with-soft-warm-tones-and-subtle-gradients-image_17465137.webp)
+- [Parchemin texture](https://images.pexels.com/photos/16557322/pexels-photo-16557322.jpeg?_gl=1dx5bwg_gaODc0MTk0NjE1LjE3ODIyOTE0Mjg._ga_8JE65Q40S6*czE3ODIyOTE0MjckbzEkZzEkdDE3ODIyOTY5MDIkajIkbDAkaDA)
+
+
+## Recours aux LLM 
+
+**Aucun LLM (Large Language Model) n'a été utilisé** pour la conception, le développement ou la rédaction de ce projet. Utilisation de Deepseek pour la mise en page du readme.md. 
+
+
+### Lien itch.io
+[](https://admirzheng.itch.io/levasseur)
+
+
+### captures d'écran
+![Capture d'écran Taylor](taylor.png)
+![Capture d'écran Code](code.png)
+
